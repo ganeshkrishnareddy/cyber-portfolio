@@ -22,7 +22,8 @@ export function ProjectsContent() {
             methodology: "Integrated AI-driven heuristic analysis for URL classification. Implemented a real-time sandboxing environment for threat validation and automated remediation.",
             outcome: "Reduced phishing exposure by 85% through proactive URL blocking and delivered an automated remediation landing page for end-user education.",
             tags: ["AI/ML", "Phishing Defense", "Python", "API Security", "Automation"],
-            githubUrl: "https://github.com/ganeshkrishnareddy/mailsheild"
+            githubUrl: "https://github.com/ganeshkrishnareddy/mailsheild",
+            liveUrl: "https://mailsheild.netlify.app"
         },
         {
             title: "Android Security – Insecure Storage & Network Analysis",
