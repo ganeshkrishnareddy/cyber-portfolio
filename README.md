@@ -1,5 +1,7 @@
 # Enterprise Cybersecurity Portfolio | Security Engineering & Defense
 
+Deployed and maintained by **P Ganesh Krishna Reddy**.
+
 A high-performance, security-centric professional portfolio designed for **P Ganesh Krishna Reddy**. This project demonstrates technical proficiency in Application Security, Network Defense, and Risk Management, built with a modern, enterprise-grade technology stack.
 
 ## �️ Technical Architecture
