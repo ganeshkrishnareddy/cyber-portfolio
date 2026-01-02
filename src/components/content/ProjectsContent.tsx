@@ -6,6 +6,16 @@ import { ProjectCard } from '@/components/ProjectCard';
 export function ProjectsContent() {
     const projects = [
         {
+            title: "IDS Defense – SOC-Grade ML Intrusion Detection",
+            description: "Built an enterprise-grade IDS dashboard featuring real-time ML-powered anomaly detection, actionable SOC KPIs, and deep-inspection threat telemetry.",
+            problem: "Network security teams lack real-time visibility into complex attack vectors, often overwhelmed by raw logs without actionable insights or ML context.",
+            methodology: "Implemented a hybrid detection engine using XGBoost for anomaly classification. Developed a high-frequency WebSocket streaming dashboard with Standalone Demo Mode fallback.",
+            outcome: "Delivered a production-ready SOC interface with sub-10ms inference latency, providing instant forensic visibility into DDoS, SQLi, and Brute Force attacks.",
+            tags: ["ML/AI", "Next.js", "FastAPI", "Cybersecurity", "SOC Operations"],
+            githubUrl: "https://github.com/ganeshkrishnareddy/IDS-Defense",
+            liveUrl: "https://ids-defense.netlify.app"
+        },
+        {
             title: "MailShield – AI-Powered Phishing Defense",
             description: "Developed an automated phishing detection system utilizing heuristic analysis and real-time URL sandboxing to protect enterprise communication channels.",
             problem: "High-velocity phishing attacks bypassing traditional spam filters, leading to credential theft and malware delivery within organizations.",
@@ -24,7 +34,7 @@ export function ProjectsContent() {
             githubUrl: "https://github.com/ganeshkrishnareddy/AndroidSecurityProject"
         },
         {
-            title: "Web Application Security Assessment & Risk Validation",
+            title: "Web App Assessment & Risk Validation",
             description: "Conducted structured security assessments to identify data exposure, authorization flaws, and access control weaknesses. Validated findings through controlled testing.",
             problem: "Exposed API endpoints allowed Insecure Object Reference (IDOR) and weak session management, risking unauthorized multi-tenant data access.",
             methodology: "Manual intercept testing with Burp Suite for broken access control and session hijacks. Automated baseline scans with OWASP ZAP.",
@@ -48,7 +58,7 @@ export function ProjectsContent() {
                 </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-8">
                 {projects.map((project, index) => (
                     <motion.div
                         key={project.title}
