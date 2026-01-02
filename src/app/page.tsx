@@ -49,9 +49,15 @@ export default function Home() {
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                 </Link>
+                <Link href="/about">
+                  <Button variant="outline" size="lg" className="gap-2">
+                    About My Journey
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </Link>
                 <Link href="https://drive.google.com/file/d/1WvuVPSjeQaGeq_6C0fKmxxTDzRJbQD39/view?usp=sharing" target="_blank">
                   <Button variant="secondary" size="lg" className="gap-2">
-                    Download Resume
+                    Resume
                     <FileDown className="w-4 h-4" />
                   </Button>
                 </Link>
@@ -136,12 +142,13 @@ export default function Home() {
               tags={["Burp Suite", "OWASP ASVS", "Python", "AppSec"]}
             />
             <ProjectCard
-              title="Secure File Transfer System"
-              description="Designed an encrypted file transfer solution emphasizing confidentiality and integrity for sensitive corporate data."
-              problem="Insecure file sharing leading to potential data leakage and interception on the network."
-              methodology="Implemented AES-256 encryption and RSA key exchange with strict integrity checks."
-              outcome="Delivered a zero-trust file sharing platform with end-to-end encryption and audit logging."
-              tags={["Python", "AES-256", "Cryptography", "Linux"]}
+              title="MailShield – AI Phishing Defense"
+              description="Automated phishing detection system utilizing heuristic analysis and real-time URL sandboxing."
+              problem="High-velocity phishing attacks bypassing traditional filters, risking credential theft."
+              methodology="AI-driven URL classification and sandboxing for threat validation."
+              outcome="Reduced phishing exposure by 85% and automated end-user remediation."
+              tags={["AI/ML", "Phishing Defense", "Python", "Automation"]}
+              githubUrl="https://github.com/ganeshkrishnareddy/mailsheild"
             />
           </div>
 

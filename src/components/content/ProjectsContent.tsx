@@ -6,30 +6,30 @@ import { ProjectCard } from '@/components/ProjectCard';
 export function ProjectsContent() {
     const projects = [
         {
+            title: "MailShield – AI-Powered Phishing Defense",
+            description: "Developed an automated phishing detection system utilizing heuristic analysis and real-time URL sandboxing to protect enterprise communication channels.",
+            problem: "High-velocity phishing attacks bypassing traditional spam filters, leading to credential theft and malware delivery within organizations.",
+            methodology: "Integrated AI-driven heuristic analysis for URL classification. Implemented a real-time sandboxing environment for threat validation and automated remediation.",
+            outcome: "Reduced phishing exposure by 85% through proactive URL blocking and delivered an automated remediation landing page for end-user education.",
+            tags: ["AI/ML", "Phishing Defense", "Python", "API Security", "Automation"],
+            githubUrl: "https://github.com/ganeshkrishnareddy/mailsheild"
+        },
+        {
+            title: "Android Security – Insecure Storage & Network Analysis",
+            description: "Conducted deep-dive security research into Android application vulnerabilities, focusing on insecure data persistence and network communication flaws.",
+            problem: "Sensitive JWT tokens were stored in plain-text shared preferences, and lack of SSL pinning allowed for easy MITM interception of encrypted traffic.",
+            methodology: "Performed static analysis with JADX/MobSF. Utilized Frida for dynamic runtime hooking to bypass SSL pinning and inspect binary data structures.",
+            outcome: "Secured local storage using the Android Keystore system and implemented robust certificate pinning, eliminating local data theft vectors.",
+            tags: ["Android Security", "Frida", "MobSF", "JADX", "MITM"],
+            githubUrl: "https://github.com/ganeshkrishnareddy/AndroidSecurityProject"
+        },
+        {
             title: "Web Application Security Assessment & Risk Validation",
             description: "Conducted structured security assessments to identify data exposure, authorization flaws, and access control weaknesses. Validated findings through controlled testing.",
             problem: "Exposed API endpoints allowed Insecure Object Reference (IDOR) and weak session management, risking unauthorized multi-tenant data access.",
             methodology: "Manual intercept testing with Burp Suite for broken access control and session hijacks. Automated baseline scans with OWASP ZAP.",
             outcome: "Eliminated IDOR risks and stored XSS flaws by enforcing strict RBAC and server-side input validation across the API layer.",
             tags: ["Burp Suite", "OWASP ZAP", "Python", "AppSec", "OWASP ASVS"],
-            githubUrl: "https://github.com/ganeshkrishnareddy"
-        },
-        {
-            title: "Secure File Transfer System – Encrypted Data Protection",
-            description: "Designed a secure file transfer solution emphasizing confidentiality and integrity. Implemented end-to-end encryption and verification mechanisms.",
-            problem: "Legacy FTP transfers were vulnerable to MITM interception and lacked integrity checks, risking data tampering in transit.",
-            methodology: "Implemented AES-256 for data at rest and RSA for secure key exchange. Integrated HMAC for cryptographic integrity verification.",
-            outcome: "Deployed a zero-trust platform where files are encrypted pre-upload and verified post-download, ensuring 100% data integrity.",
-            tags: ["Python", "AES-256", "RSA", "HMAC", "Linux Security"],
-            githubUrl: "https://github.com/ganeshkrishnareddy"
-        },
-        {
-            title: "Android Application Security & Data Storage Analysis",
-            description: "Analyzed mobile applications for insecure data storage and improper component exposure. Identified weak certificate validation risks.",
-            problem: "Android application was storing sensitive JWT tokens in plain-text shared preferences and lacked SSL pinning.",
-            methodology: "Static analysis with JADX/MobSF. Runtime hooking with Frida to bypass SSL pinning and inspect encrypted traffic.",
-            outcome: "Secured local storage using Android Keystore and implemented certificate pinning, preventing 99% of local data theft vectors.",
-            tags: ["MobSF", "JADX", "ADB", "Mobile Security", "Android"],
             githubUrl: "https://github.com/ganeshkrishnareddy"
         }
     ];
