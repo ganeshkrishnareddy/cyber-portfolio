@@ -10,9 +10,9 @@ import { ProjectCard } from '@/components/ProjectCard';
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-20 pb-20">
+    <div className="flex flex-col gap-12 md:gap-20 pb-12 md:pb-20">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[70vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-background to-background opacity-50" />
@@ -31,7 +31,7 @@ export default function Home() {
                 <span>Security Engineer & Threat Hunter</span>
               </div>
 
-              <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight text-text-primary">
+              <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight text-text-primary">
                 Defending Systems by <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
                   Thinking Like an Attacker.
@@ -98,8 +98,8 @@ export default function Home() {
 
       {/* Brief Skills / Stats */}
       <section className="border-y border-surface bg-surface/30">
-        <div className="container max-w-7xl mx-auto px-4 py-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="container max-w-7xl mx-auto px-4 py-10 md:py-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {[
               { label: "Vulnerabilities Identified", value: "50+", context: "Labs & Academic Projects", icon: Shield },
               { label: "Projects Secured", value: "10+", context: "Web & Network Defense", icon: Lock },

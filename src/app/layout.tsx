@@ -36,7 +36,7 @@ export default function RootLayout({
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased bg-background text-text-primary overflow-x-hidden flex flex-col min-h-screen`}
       >
         <Navbar />
-        <main className="flex-grow pt-16">
+        <main className="flex-grow pt-[56px]">
           {children}
         </main>
         <Footer />
