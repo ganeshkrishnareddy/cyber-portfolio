@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ProjectCard } from '@/components/ProjectCard';
+import { ProjectCard3D } from '@/components/3d/ProjectCard3D';
 
 export function ProjectsContent() {
     const projects = [
@@ -11,7 +12,7 @@ export function ProjectsContent() {
             problem: "Network security teams lack real-time visibility into complex attack vectors, often overwhelmed by raw logs without actionable insights or ML context.",
             methodology: "Implemented a hybrid detection engine using XGBoost for anomaly classification. Developed a high-frequency WebSocket streaming dashboard with Standalone Demo Mode fallback.",
             outcome: "Delivered a production-ready SOC interface with sub-10ms inference latency, providing instant forensic visibility into DDoS, SQLi, and Brute Force attacks.",
-            tags: ["ML/AI", "Next.js", "FastAPI", "Cybersecurity", "SOC Operations"],
+            tags: ["Full-Stack", "ML/AI", "Backend", "Cybersecurity"],
             githubUrl: "https://github.com/ganeshkrishnareddy/IDS-Defense",
             liveUrl: "https://ids-defense.netlify.app"
         },
@@ -21,9 +22,18 @@ export function ProjectsContent() {
             problem: "High-velocity phishing attacks bypassing traditional spam filters, leading to credential theft and malware delivery within organizations.",
             methodology: "Integrated AI-driven heuristic analysis for URL classification. Implemented a real-time sandboxing environment for threat validation and automated remediation.",
             outcome: "Reduced phishing exposure by 85% through proactive URL blocking and delivered an automated remediation landing page for end-user education.",
-            tags: ["AI/ML", "Phishing Defense", "Python", "API Security", "Automation"],
+            tags: ["Full-Stack", "AppSec", "Automation", "Python"],
             githubUrl: "https://github.com/ganeshkrishnareddy/mailsheild",
             liveUrl: "https://mailsheild.netlify.app"
+        },
+        {
+            title: "MealRoute – Secure Logistics Platform",
+            description: "Production-style logistics system with secure authentication, RBAC, and real-time synchronization for food delivery operations.",
+            problem: "Unauthorized access risks and data leakage across multi-tenant delivery operations.",
+            methodology: "Implemented secure auth flows, role-based dashboards, and encrypted data channels.",
+            outcome: "Prevented unauthorized access to operational data and streamlined delivery management.",
+            tags: ["Full-Stack", "Backend", "Secure Systems", "Firebase"],
+            githubUrl: "https://github.com/ganeshkrishnareddy/mealroute"
         },
         {
             title: "Android Security – Insecure Storage & Network Analysis",
@@ -31,7 +41,7 @@ export function ProjectsContent() {
             problem: "Sensitive JWT tokens were stored in plain-text shared preferences, and lack of SSL pinning allowed for easy MITM interception of encrypted traffic.",
             methodology: "Performed static analysis with JADX/MobSF. Utilized Frida for dynamic runtime hooking to bypass SSL pinning and inspect binary data structures.",
             outcome: "Secured local storage using the Android Keystore system and implemented robust certificate pinning, eliminating local data theft vectors.",
-            tags: ["Android Security", "Frida", "MobSF", "JADX", "MITM"],
+            tags: ["AppSec", "Android", "APIs", "Security Research"],
             githubUrl: "https://github.com/ganeshkrishnareddy/AndroidSecurityProject"
         },
         {
@@ -40,7 +50,7 @@ export function ProjectsContent() {
             problem: "Exposed API endpoints allowed Insecure Object Reference (IDOR) and weak session management, risking unauthorized multi-tenant data access.",
             methodology: "Manual intercept testing with Burp Suite for broken access control and session hijacks. Automated baseline scans with OWASP ZAP.",
             outcome: "Eliminated IDOR risks and stored XSS flaws by enforcing strict RBAC and server-side input validation across the API layer.",
-            tags: ["Burp Suite", "OWASP ZAP", "Python", "AppSec", "OWASP ASVS"],
+            tags: ["Backend", "AppSec", "APIs", "OWASP ASVS"],
             githubUrl: "https://github.com/ganeshkrishnareddy"
         }
     ];
@@ -52,23 +62,18 @@ export function ProjectsContent() {
                 animate={{ opacity: 1, y: 0 }}
                 className="max-w-2xl"
             >
-                <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-4">Security Case Studies</h1>
+                <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-4">Secure Engineering Projects</h1>
                 <p className="text-xl text-text-muted">
-                    A collection of security assessments, defense implementations, and vulnerability research.
-                    Focusing on the <b>why</b> and <b>how</b> of exploitation and remediation.
+                    A collection of full-stack applications and security work.
+                    Focusing on the <b>engineering</b> and <b>defense</b> aspects of each project.
                 </p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-8">
                 {projects.map((project, index) => (
-                    <motion.div
-                        key={project.title}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.1 }}
-                    >
+                    <ProjectCard3D key={project.title} delay={index * 0.1}>
                         <ProjectCard {...project} />
-                    </motion.div>
+                    </ProjectCard3D>
                 ))}
             </div>
         </div>

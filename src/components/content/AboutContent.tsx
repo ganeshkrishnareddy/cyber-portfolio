@@ -23,8 +23,12 @@ export function AboutContent() {
             >
                 <h1 className="text-4xl md:text-5xl font-bold text-text-primary">About Me</h1>
                 <p className="text-xl text-text-muted leading-relaxed">
-                    Security Engineer with a strong foundation in deploying security controls, validating access policies, and identifying data exposure risks.
-                    I focus on defensive security, hardening Linux systems, and ensuring compliance-aligned security practices.
+                    I am a final-year Computer Science student focused on building <b>secure, scalable software systems</b>.
+                    My work combines full-stack development (React, Node.js, databases, cloud) with cybersecurity practices
+                    such as application security testing, Linux hardening, and secure authentication.
+                </p>
+                <p className="text-lg text-text-muted leading-relaxed">
+                    I approach security as part of the software engineering lifecycle — not as a separate role.
                 </p>
             </motion.div>
 
@@ -70,6 +74,28 @@ export function AboutContent() {
                 <div className="relative border-l-2 border-surface ml-3 pl-8 space-y-10">
                     <div className="relative">
                         <div className="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-background bg-primary" />
+                        <div className="space-y-2">
+                            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                                <h3 className="text-xl font-bold text-text-primary">Freelance Web Architect & Technical Lead</h3>
+                                <span className="text-sm font-mono text-text-muted">Feb 2020 - Present</span>
+                            </div>
+                            <div className="text-secondary font-medium">ProgVision <span className="text-text-muted font-normal">• Worldwide / Remote</span></div>
+                            <ul className="list-disc list-inside text-text-muted space-y-2 pt-2">
+                                <li>Started as a freelance designer and evolved into a full-cycle web architect.</li>
+                                <li>Delivered 10+ high-performance, secure websites for global clients across various industries.</li>
+                                <li>Mastered the complete lifecycle: from initial design to secure production deployment and scaling.</li>
+                                <li>Integrated security-first principles into every freelance build from the ground up.</li>
+                            </ul>
+                            <div className="flex flex-wrap gap-2 pt-2">
+                                <SkillBadge name="React" level="Intermediate" className="border-surface" />
+                                <SkillBadge name="Node.js" level="Intermediate" className="border-surface" />
+                                <SkillBadge name="Firebase" level="Intermediate" className="border-surface" />
+                                <SkillBadge name="Secure Auth" level="Intermediate" className="border-surface" />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="relative">
+                        <div className="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-background bg-surface-hover" />
                         <div className="space-y-2">
                             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                                 <h3 className="text-xl font-bold text-text-primary">Linux System Administration Trainee</h3>
@@ -143,10 +169,10 @@ export function AboutContent() {
                     <ul className="space-y-4">
                         <li className="flex items-start justify-between group">
                             <div>
-                                <h3 className="font-bold text-text-primary group-hover:text-primary transition-colors">CompTIA Security+</h3>
-                                <div className="text-sm text-text-muted">CompTIA</div>
+                                <h3 className="font-bold text-text-primary group-hover:text-primary transition-colors">QuickHeal Certified Malware Analyst</h3>
+                                <div className="text-sm text-text-muted">QuickHeal</div>
                             </div>
-                            <span className="text-xs font-mono text-text-muted border border-surface px-2 py-1 rounded">Aug 2025</span>
+                            <span className="text-xs font-mono text-text-muted border border-surface px-2 py-1 rounded">Dec 2025</span>
                         </li>
                         <li className="flex items-start justify-between group">
                             <div>
@@ -164,10 +190,17 @@ export function AboutContent() {
                         </li>
                         <li className="flex items-start justify-between group">
                             <div>
-                                <h3 className="font-bold text-text-primary group-hover:text-primary transition-colors">QuickHeal Certified Malware Analyst</h3>
-                                <div className="text-sm text-text-muted">QuickHeal</div>
+                                <h3 className="font-bold text-text-primary group-hover:text-primary transition-colors">CompTIA Security+</h3>
+                                <div className="text-sm text-text-muted">CompTIA</div>
                             </div>
-                            <span className="text-xs font-mono text-text-muted border border-surface px-2 py-1 rounded">Dec 2025</span>
+                            <span className="text-xs font-mono text-text-muted border border-surface px-2 py-1 rounded">Jan 2025</span>
+                        </li>
+                        <li className="flex items-start justify-between group">
+                            <div>
+                                <h3 className="font-bold text-text-primary group-hover:text-primary transition-colors">CompTIA Network+</h3>
+                                <div className="text-sm text-text-muted">CompTIA</div>
+                            </div>
+                            <span className="text-xs font-mono text-text-muted border border-surface px-2 py-1 rounded">Aug 2024</span>
                         </li>
                     </ul>
                 </section>

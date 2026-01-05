@@ -19,6 +19,7 @@ export const metadata: Metadata = {
 };
 
 import { Navbar } from "@/components/Navbar";
+import { CustomCursor } from "@/components/CustomCursor";
 import { Footer } from "@/components/Footer";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 
@@ -36,6 +37,7 @@ export default function RootLayout({
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased bg-background text-text-primary overflow-x-hidden flex flex-col min-h-screen`}
       >
         <Navbar />
+        <CustomCursor />
         <main className="flex-grow pt-[56px]">
           {children}
         </main>

@@ -12,6 +12,7 @@ interface ProjectCardProps {
     methodology: string;
     outcome: string;
     tags: string[];
+    whyItMatters?: string;
     githubUrl?: string;
     liveUrl?: string;
     image?: string; // Optional for now
@@ -24,6 +25,7 @@ export function ProjectCard({
     methodology,
     outcome,
     tags,
+    whyItMatters,
     githubUrl,
     liveUrl,
 }: ProjectCardProps) {
@@ -33,6 +35,16 @@ export function ProjectCard({
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
             <div className="relative p-6 space-y-6">
+                {/* Impact Highlight */}
+                {whyItMatters && (
+                    <div className="relative pl-4 py-2 bg-primary/5 border-l-4 border-primary rounded-r-md">
+                        <span className="text-primary text-[10px] font-black uppercase tracking-[0.2em] block mb-0.5">Key Impact</span>
+                        <p className="text-text-primary text-sm font-bold leading-tight">
+                            {whyItMatters}
+                        </p>
+                    </div>
+                )}
+
                 {/* Header */}
                 <div className="space-y-2">
                     <div className="flex items-start justify-between">
@@ -86,10 +98,20 @@ export function ProjectCard({
                     </div>
                 </div>
 
-                {/* Tags */}
                 <div className="flex flex-wrap gap-2 pt-2">
                     {tags.map((tag) => (
-                        <SkillBadge key={tag} name={tag} level="Basic" className="bg-surface border-surface-hover text-text-muted" />
+                        <SkillBadge
+                            key={tag}
+                            name={tag}
+                            level={
+                                tag.toLowerCase().includes('backend') ? 'Production' :
+                                    tag.toLowerCase().includes('appsec') ? 'Applied' :
+                                        tag.toLowerCase().includes('secure') ? 'Applied' :
+                                            tag.toLowerCase().includes('full-stack') ? 'Production' :
+                                                tag.toLowerCase().includes('automation') ? 'Practical' : 'Hands-On'
+                            }
+                            className="bg-surface border-surface-hover text-text-muted"
+                        />
                     ))}
                 </div>
             </div>

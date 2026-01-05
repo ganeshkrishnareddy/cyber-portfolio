@@ -18,12 +18,16 @@ import {
 
 interface SkillBadgeProps {
     name: string;
-    level?: 'Basic' | 'Intermediate' | 'Advanced' | 'Expert';
+    level?: 'Applied' | 'Production' | 'Hands-On' | 'Practical' | 'Basic' | 'Intermediate' | 'Advanced' | 'Expert';
     className?: string;
     icon?: LucideIcon;
 }
 
 const levelColors = {
+    Applied: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
+    Production: 'bg-green-500/10 text-green-400 border-green-500/20',
+    'Hands-On': 'bg-orange-500/10 text-orange-400 border-orange-500/20',
+    Practical: 'bg-purple-500/10 text-purple-400 border-purple-500/20',
     Basic: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
     Intermediate: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20',
     Advanced: 'bg-orange-500/10 text-orange-400 border-orange-500/20',

@@ -16,9 +16,9 @@ export function ContactContent() {
                     className="space-y-8"
                 >
                     <div>
-                        <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-6">Let's Secure Something.</h1>
+                        <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-6">Let's Build & Secure Something.</h1>
                         <p className="text-xl text-text-muted leading-relaxed">
-                            Open to opportunities in Security Engineering, SOC Analysis, and Penetration Testing.
+                            Open to opportunities in Secure Software Engineering, Backend Development, and Application Security.
                         </p>
                     </div>
 
@@ -102,7 +102,7 @@ export function ContactContent() {
                                 name="message"
                                 required
                                 rows={5}
-                                placeholder="Hello, I'd like to discuss a security role..."
+                                placeholder="Hello, I'd like to discuss a secure engineering role..."
                                 className="w-full px-4 py-3 bg-background rounded-lg border border-surface-hover focus:border-primary focus:ring-1 focus:ring-primary text-text-primary placeholder:text-text-muted/50 outline-none transition-all resize-none"
                             />
                         </div>
