@@ -1,18 +1,15 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import dynamic from 'next/dynamic';
 import { motion, AnimatePresence } from 'framer-motion';
 import { clsx } from 'clsx';
 import { ParticleBackground } from '@/components/3d/ParticleBackground';
-import { ArrowRight, FileDown, Shield, Terminal as TerminalIcon, ShieldCheck, Lock, Globe } from 'lucide-react';
+import { ArrowRight, Shield, Terminal as TerminalIcon, ShieldCheck, Lock, Globe } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/Button';
 import { ProjectCard } from '@/components/ProjectCard';
 import { TiltCard } from '@/components/3d/TiltCard';
 import { InteractiveTerminal } from '@/components/InteractiveTerminal';
-
-const SecureSystemHero = null; // Removed 3D Hero usage as requested
 
 export default function Home() {
   const [isAuditing, setIsAuditing] = useState(false);

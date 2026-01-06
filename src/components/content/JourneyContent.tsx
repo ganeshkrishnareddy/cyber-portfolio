@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Award, GraduationCap, BookOpen, Target, Rocket } from 'lucide-react';
+import { Award, Target, Rocket } from 'lucide-react';
 import { SkillBadge } from '@/components/SkillBadge';
 
 export function JourneyContent() {
@@ -26,7 +26,7 @@ export function JourneyContent() {
             >
                 <h1 className="text-4xl md:text-5xl font-bold text-text-primary">Security & Engineering Journey</h1>
                 <p className="text-xl text-text-muted leading-relaxed">
-                    How I'm building towards becoming a Secure Software Engineer — combining full-stack development with cybersecurity fundamentals.
+                    How I&apos;m building towards becoming a Secure Software Engineer — combining full-stack development with cybersecurity fundamentals.
                 </p>
                 <p className="text-lg text-text-muted leading-relaxed">
                     This journey reflects my transition from learning security fundamentals to applying them directly within full-stack and backend engineering projects.

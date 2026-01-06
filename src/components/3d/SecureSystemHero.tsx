@@ -111,13 +111,14 @@ export function SecureSystemHero() {
     const [webglSupported, setWebglSupported] = useState<boolean | null>(null);
 
     useEffect(() => {
-        try {
+        const checkWebGL = () => {
             const canvas = document.createElement('canvas');
             const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
             setWebglSupported(!!gl);
-        } catch (e) {
-            setWebglSupported(false);
-        }
+        };
+
+        const timer = setTimeout(checkWebGL, 0);
+        return () => clearTimeout(timer);
     }, []);
 
     if (webglSupported === null) {

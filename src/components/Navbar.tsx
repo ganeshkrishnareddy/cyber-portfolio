@@ -4,8 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Terminal, ShieldCheck, Award, Zap, Code } from 'lucide-react';
-import { clsx } from 'clsx';
+import { Menu, X, Terminal, Award, Zap, Code } from 'lucide-react';
 import { twMerge } from 'tailwind-merge';
 
 const navItems = [

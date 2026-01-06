@@ -1,8 +1,6 @@
 'use client';
 
-import Link from 'next/link';
-import { ExternalLink, Github, ShieldAlert, ArrowRight, CheckCircle2, Shield } from 'lucide-react';
-import { clsx } from 'clsx';
+import { ExternalLink, Github, ShieldAlert, CheckCircle2, Shield } from 'lucide-react';
 import { SkillBadge } from '@/components/SkillBadge';
 
 interface ProjectCardProps {

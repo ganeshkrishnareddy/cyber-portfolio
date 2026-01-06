@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Terminal as TerminalIcon, ChevronRight } from 'lucide-react';
+import { Terminal as TerminalIcon } from 'lucide-react';
 import { twMerge } from 'tailwind-merge';
 
 interface CommandResponse {
@@ -23,27 +23,6 @@ export function InteractiveTerminal() {
             scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
         }
     }, [history]);
-
-    // Auto-run commands on mount for recruiter trust
-    useEffect(() => {
-        const commands = ['whoami', 'focus', 'current_status', 'projects'];
-        let timeout: NodeJS.Timeout;
-
-        const runNext = (index: number) => {
-            if (index < commands.length) {
-                timeout = setTimeout(() => {
-                    handleCommand(commands[index]);
-                    runNext(index + 1);
-                }, 600 + (index * 400)); // Staggered delay for "natural" feel
-            }
-        };
-
-        const initialDelay = setTimeout(() => runNext(0), 1000);
-        return () => {
-            clearTimeout(initialDelay);
-            clearTimeout(timeout);
-        };
-    }, []);
 
     const handleCommand = (cmd: string) => {
         const trimmedCmd = cmd.trim().toLowerCase();
@@ -123,6 +102,27 @@ export function InteractiveTerminal() {
             ...(Array.isArray(response) ? response : [response]),
         ]);
     };
+
+    // Auto-run commands on mount for recruiter trust
+    useEffect(() => {
+        const commands = ['whoami', 'focus', 'current_status', 'projects'];
+        let timeout: NodeJS.Timeout;
+
+        const runNext = (index: number) => {
+            if (index < commands.length) {
+                timeout = setTimeout(() => {
+                    handleCommand(commands[index]);
+                    runNext(index + 1);
+                }, 600 + (index * 400)); // Staggered delay for "natural" feel
+            }
+        };
+
+        const initialDelay = setTimeout(() => runNext(0), 1000);
+        return () => {
+            clearTimeout(initialDelay);
+            clearTimeout(timeout);
+        };
+    }, []);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();

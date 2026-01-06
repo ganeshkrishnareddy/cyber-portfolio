@@ -1,3 +1,4 @@
+import React, { useMemo } from 'react';
 import { clsx } from 'clsx';
 import {
     Code,
@@ -5,7 +6,6 @@ import {
     Shield,
     Globe,
     Search,
-    ExternalLink,
     Github,
     Cpu,
     Lock,
@@ -53,7 +53,7 @@ const getIcon = (name: string): LucideIcon => {
 };
 
 export function SkillBadge({ name, level, className, icon: ManualIcon }: SkillBadgeProps) {
-    const Icon = ManualIcon || getIcon(name);
+    const Icon = useMemo(() => ManualIcon || getIcon(name), [ManualIcon, name]);
 
     return (
         <div

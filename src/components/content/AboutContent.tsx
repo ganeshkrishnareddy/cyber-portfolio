@@ -1,8 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Briefcase, GraduationCap, Award, Server, Shield, Globe, Terminal as TerminalIcon } from 'lucide-react';
-import { Terminal, TerminalLine } from '@/components/Terminal';
+import { Briefcase, GraduationCap, Award, Shield, Terminal as TerminalIcon } from 'lucide-react';
 import { SkillBadge } from '@/components/SkillBadge';
 
 export function AboutContent() {
@@ -49,10 +48,9 @@ export function AboutContent() {
                         </p>
                     </div>
                     <div className="space-y-2">
-                        <div className="h-full w-px bg-surface hidden md:block absolute right-0 top-0" /> {/* Separator hack if needed, or just cleaner grid */}
                         <h3 className="font-bold text-text-primary text-lg">Validation & Proof</h3>
                         <p className="text-text-muted text-sm leading-relaxed">
-                            I don't just report scanner outputs. I validate findings with reproducible steps (PoCs) to eliminate false positives.
+                            I don&apos;t just report scanner outputs. I validate findings with reproducible steps (PoCs) to eliminate false positives.
                         </p>
                     </div>
                     <div className="space-y-2">

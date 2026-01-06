@@ -1,0 +1,13 @@
+
+D:\WebApps\cyber-portfolio\debug_lint.js
+  1:18  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  2:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+D:\WebApps\cyber-portfolio\src\components\InteractiveTerminal.tsx
+  107:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+  126:8  warning  React Hook useEffect has a missing dependency: 'handleCommand'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+✖ 4 problems (2 errors, 2 warnings)
+  0 errors and 1 warning potentially fixable with the `--fix` option.
+
+

@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { Github, Linkedin, Mail } from 'lucide-react';
-import { Button } from '@/components/Button';
 
 export function Footer() {
     return (
