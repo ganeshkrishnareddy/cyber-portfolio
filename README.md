@@ -55,7 +55,7 @@ netlify deploy --prod
 ```
 
 ## 🌐 Live Deployment
-The production version is live at: [pganeshreddy.netlify.app](https://pganeshreddy.netlify.app)
+The production version is live at: [pganeshkrishnareddy.vercel.app](https://pganeshkrishnareddy.vercel.app/)
 
 ---
 *Built with a security-first mindset. No trackers. No unnecessary dependencies.*
