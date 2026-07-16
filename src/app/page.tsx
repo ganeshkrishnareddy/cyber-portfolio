@@ -382,7 +382,7 @@ export default function Home() {
               methodology="Built a privacy-first web application utilizing WebAssembly and client-side JavaScript to perform all PDF operations locally in the browser."
               outcome="Delivered a secure, offline-capable PDF suite that ensures zero data leaves the user's device."
               tags={["WebAssembly", "Privacy-First", "Client-Side Processing", "Next.js"]}
-              githubUrl="https://github.com/ganeshkrishnareddy/ZeroPDF"
+              githubUrl="https://github.com/ganeshkrishnareddy/PixoPDF"
             />
             <ProjectCard
               title="InstaDemoX"
