@@ -78,6 +78,51 @@ export function ProjectsContent() {
             outcome: "Eliminated IDOR risks and stored XSS flaws by enforcing strict RBAC and server-side input validation across the API layer.",
             tags: ["Backend", "AppSec", "APIs", "OWASP ASVS"],
             githubUrl: "https://github.com/ganeshkrishnareddy"
+        },
+        {
+            title: "Security Reconnaissance & Vulnerability Research",
+            description: "Conducted comprehensive security assessments across multiple organizations, identifying critical vulnerabilities such as SSRF, XMLRPC leaks, and unauthorized data exposure.",
+            problem: "Organizations often deploy infrastructure with misconfigured APIs, exposed secrets, and unauthenticated endpoints, leading to critical security risks.",
+            methodology: "Performed black-box security assessments, API introspection, subdomain enumeration, and client-side analysis to uncover vulnerabilities.",
+            outcome: "Discovered critical vulnerabilities including SSRF via Agent Command Execution (CtrlB), STT Batch Job SSRF (Sarvam AI), Email Verification Bypass (Infoseclabs), and XMLRPC Stack Trace Leaks (Odoo).",
+            tags: ["Security Research", "Vulnerability Assessment", "SSRF", "Reconnaissance"],
+            githubUrl: "https://github.com/ganeshkrishnareddy"
+        },
+        {
+            title: "FlowMatch",
+            description: "AI-powered platform to build and orchestrate autonomous AI agent workflows.",
+            problem: "Building multi-agent systems and managing their workflows is complex and lacks visual orchestration.",
+            methodology: "Developed a highly interactive UI with visual node-based workflow builder, real-time logging, and agent memory management.",
+            outcome: "Enabled users to seamlessly create, deploy, and monitor AI agent workflows with full observability.",
+            tags: ["AI Agents", "Workflow Orchestration", "Next.js", "Full-Stack"],
+            githubUrl: "https://github.com/ganeshkrishnareddy/FlowMatch"
+        },
+        {
+            title: "PixoPDF (ZeroPDF Online Suite)",
+            description: "A fast, client-side PDF processing suite for editing, merging, and converting PDF documents.",
+            problem: "Many online PDF tools compromise privacy by uploading sensitive documents to external servers for processing.",
+            methodology: "Built a privacy-first web application utilizing WebAssembly and client-side JavaScript to perform all PDF operations locally in the browser.",
+            outcome: "Delivered a secure, offline-capable PDF suite that ensures zero data leaves the user's device.",
+            tags: ["WebAssembly", "Privacy-First", "Client-Side Processing", "Next.js"],
+            githubUrl: "https://github.com/ganeshkrishnareddy/ZeroPDF"
+        },
+        {
+            title: "InstaDemoX",
+            description: "Interactive product demo creation platform for SaaS companies.",
+            problem: "Creating engaging, interactive product demonstrations often requires significant engineering resources or complex video editing.",
+            methodology: "Engineered a platform that captures DOM states to generate highly interactive, clickable product walkthroughs without writing code.",
+            outcome: "Allowed marketing and sales teams to create self-serve, interactive product demos in minutes, boosting engagement.",
+            tags: ["SaaS", "DOM Capture", "Interactive UI", "React"],
+            githubUrl: "https://github.com/ganeshkrishnareddy/InstaDemoX"
+        },
+        {
+            title: "LaunchWise",
+            description: "All-in-one product launch and marketing automation platform for creators.",
+            problem: "Founders struggle to coordinate multiple marketing channels, waitlists, and analytics during product launches.",
+            methodology: "Integrated waitlist management, email automation, and conversion tracking into a single dashboard using modern web technologies.",
+            outcome: "Streamlined the launch process, improving lead capture rates and providing actionable insights for successful product releases.",
+            tags: ["Marketing Automation", "SaaS", "Analytics", "Full-Stack"],
+            githubUrl: "https://github.com/ganeshkrishnareddy/LaunchWise"
         }
     ];
 
