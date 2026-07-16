@@ -365,24 +365,44 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-8">
             <ProjectCard
-              title="SentinelMind – Autonomous Threat Guardian for Agentic AI Systems"
-              description="Zero-trust security layer and real-time monitoring gateway built for multi-agent AI ecosystems. Developed for the Microsoft Build AI Hackathon."
-              whyItMatters="Protects autonomous agent networks against adversarial prompt injections and privilege escalations with sub-12ms interception latency."
-              problem="As AI agents transition to taking autonomous, real-world actions, they become vulnerable to adversarial command hijacking, privilege escalation, and data exfiltration from compromised internal components."
-              methodology="Designed a zero-trust scoring engine with keyword analyzers and payload inspection. Built a highly responsive Next.js dashboard with Recharts telemetry visualizing threat vectors in real-time."
-              outcome="Achieved sub-12ms mitigation gateway latency with customizable threshold blocking (ALLOW / QUARANTINE / BLOCK) and immutable action audit logging."
-              tags={["AI/ML Security", "Next.js", "TypeScript", "Zero-Trust", "Threat Defense"]}
-              githubUrl="https://github.com/ganeshkrishnareddy/Sentinel-Mind"
+              title="FlowMatch"
+              description="AI-powered platform to build and orchestrate autonomous AI agent workflows."
+              whyItMatters="Simplifies the creation and management of multi-agent systems with visual orchestration."
+              problem="Building multi-agent systems and managing their workflows is complex and lacks visual orchestration."
+              methodology="Developed a highly interactive UI with visual node-based workflow builder, real-time logging, and agent memory management."
+              outcome="Enabled users to seamlessly create, deploy, and monitor AI agent workflows with full observability."
+              tags={["AI Agents", "Workflow Orchestration", "Next.js", "Full-Stack"]}
+              githubUrl="https://github.com/ganeshkrishnareddy/FlowMatch"
             />
             <ProjectCard
-              title="CRAG – Cognitive Resilience and Automated Governance"
-              description="Built an AI-powered third-party vendor risk monitoring prototype with real-time risk scoring (0–100) and automated alerts."
-              whyItMatters="Provides continuous risk visibility and automated compliance auditing for third-party vendor ecosystems."
-              problem="Organizations struggle to monitor vendor risks in real-time, often relying on manual periodic surveys that fail to capture immediate threat posture changes."
-              methodology="Implemented RBAC for Admin/Vendor views, APScheduler-driven dynamic scoring engine, and compliance audit log. Designed a live glassmorphism dashboard with Chart.js visualizations."
-              outcome="Delivered a dynamic risk score monitoring dashboard with continuous vendor risk visibility, backed by FastAPI, SQLAlchemy, and Firebase."
-              tags={["Full-Stack", "AI Governance", "FastAPI", "SQLAlchemy", "Firebase"]}
-              githubUrl="https://github.com/ganeshkrishnareddy/CRAG"
+              title="PixoPDF (ZeroPDF Online Suite)"
+              description="A fast, client-side PDF processing suite for editing, merging, and converting PDF documents."
+              whyItMatters="Ensures document privacy by performing all PDF operations locally in the browser."
+              problem="Many online PDF tools compromise privacy by uploading sensitive documents to external servers for processing."
+              methodology="Built a privacy-first web application utilizing WebAssembly and client-side JavaScript to perform all PDF operations locally in the browser."
+              outcome="Delivered a secure, offline-capable PDF suite that ensures zero data leaves the user's device."
+              tags={["WebAssembly", "Privacy-First", "Client-Side Processing", "Next.js"]}
+              githubUrl="https://github.com/ganeshkrishnareddy/ZeroPDF"
+            />
+            <ProjectCard
+              title="InstaDemoX"
+              description="Interactive product demo creation platform for SaaS companies."
+              whyItMatters="Empowers teams to create interactive product walkthroughs without writing code."
+              problem="Creating engaging, interactive product demonstrations often requires significant engineering resources or complex video editing."
+              methodology="Engineered a platform that captures DOM states to generate highly interactive, clickable product walkthroughs."
+              outcome="Allowed marketing and sales teams to create self-serve, interactive product demos in minutes, boosting engagement."
+              tags={["SaaS", "DOM Capture", "Interactive UI", "React"]}
+              githubUrl="https://github.com/ganeshkrishnareddy/InstaDemoX"
+            />
+            <ProjectCard
+              title="LaunchWise"
+              description="All-in-one product launch and marketing automation platform for creators."
+              whyItMatters="Streamlines the product launch process by centralizing waitlists, email automation, and analytics."
+              problem="Founders struggle to coordinate multiple marketing channels, waitlists, and analytics during product launches."
+              methodology="Integrated waitlist management, email automation, and conversion tracking into a single dashboard using modern web technologies."
+              outcome="Streamlined the launch process, improving lead capture rates and providing actionable insights for successful product releases."
+              tags={["Marketing Automation", "SaaS", "Analytics", "Full-Stack"]}
+              githubUrl="https://github.com/ganeshkrishnareddy/LaunchWise"
             />
           </div>
 

@@ -80,15 +80,6 @@ export function ProjectsContent() {
             githubUrl: "https://github.com/ganeshkrishnareddy"
         },
         {
-            title: "Security Reconnaissance & Vulnerability Research",
-            description: "Conducted comprehensive security assessments across multiple organizations, identifying critical vulnerabilities such as SSRF, XMLRPC leaks, and unauthorized data exposure.",
-            problem: "Organizations often deploy infrastructure with misconfigured APIs, exposed secrets, and unauthenticated endpoints, leading to critical security risks.",
-            methodology: "Performed black-box security assessments, API introspection, subdomain enumeration, and client-side analysis to uncover vulnerabilities.",
-            outcome: "Discovered critical vulnerabilities including SSRF via Agent Command Execution (CtrlB), STT Batch Job SSRF (Sarvam AI), Email Verification Bypass (Infoseclabs), and XMLRPC Stack Trace Leaks (Odoo).",
-            tags: ["Security Research", "Vulnerability Assessment", "SSRF", "Reconnaissance"],
-            githubUrl: "https://github.com/ganeshkrishnareddy"
-        },
-        {
             title: "FlowMatch",
             description: "AI-powered platform to build and orchestrate autonomous AI agent workflows.",
             problem: "Building multi-agent systems and managing their workflows is complex and lacks visual orchestration.",
