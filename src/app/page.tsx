@@ -116,18 +116,17 @@ export default function Home() {
               </div>
 
               <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight leading-tight text-text-primary">
-                Building & Defending Systems <br />
+                Secure Software Engineer.<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-                  with Engineering Precision.
+                  I build software that survives production.
                 </span>
               </h1>
-              <p className="text-sm text-text-muted font-mono tracking-wide">
-                Secure Software Engineer • Full-Stack Development • Application Security
-              </p>
-
-              <p className="text-xl text-text-muted max-w-2xl mx-auto md:mx-0 leading-relaxed">
-                Architecting resilient systems by combining deep full-stack engineering with a security-first defensive mindset.
-              </p>
+              
+              <div className="flex flex-col gap-2 mt-6">
+                <p className="text-xl text-text-muted max-w-2xl mx-auto md:mx-0 leading-relaxed font-mono">
+                  Full-stack engineering. Application Security. AI Systems.
+                </p>
+              </div>
 
               <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
                 <Link href="/projects">

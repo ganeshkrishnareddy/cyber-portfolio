@@ -20,17 +20,16 @@ export function AboutContent() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="md:col-span-8 space-y-4"
+                    className="md:col-span-8 space-y-6"
                 >
                     <h1 className="text-4xl md:text-5xl font-bold text-text-primary">About Me</h1>
-                    <p className="text-xl text-text-muted leading-relaxed">
-                        I am a final-year Computer Science student focused on building <b>secure, scalable software systems</b>.
-                        My work combines full-stack development (React, Node.js, databases, cloud) with cybersecurity practices
-                        such as application security testing, Linux hardening, and secure authentication.
-                    </p>
-                    <p className="text-lg text-text-muted leading-relaxed">
-                        I approach security as part of the software engineering lifecycle — not as a separate role.
-                    </p>
+                    <div className="space-y-4 text-xl text-text-muted leading-relaxed">
+                        <p>I didn't start in cybersecurity. I started building products.</p>
+                        <p>While delivering production software, I realized most applications fail because security is treated as an afterthought.</p>
+                        <p className="text-text-primary font-semibold border-l-4 border-primary pl-4">
+                            Today, I design software where security is part of the architecture—not something added later.
+                        </p>
+                    </div>
                 </motion.div>
 
                 <motion.div
@@ -62,33 +61,32 @@ export function AboutContent() {
                 </motion.div>
             </div>
 
-            {/* How I Approach Security - Engineering Maturity */}
-            <section className="bg-surface/30 border border-surface rounded-xl p-8 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl" />
-
-                <h2 className="text-2xl font-bold text-text-primary mb-6 flex items-center gap-2">
-                    <Shield className="w-6 h-6 text-primary" />
-                    How I Approach Security
-                </h2>
-
-                <div className="grid md:grid-cols-3 gap-8">
+            {/* Engineering Philosophy */}
+            <section className="space-y-8">
+                <div className="flex items-center gap-2 pb-2 border-b border-surface">
+                    <TerminalIcon className="w-6 h-6 text-primary" />
+                    <h2 className="text-2xl font-bold text-text-primary">Engineering Principles</h2>
+                </div>
+                <div className="grid md:grid-cols-2 gap-8">
                     <div className="space-y-2">
-                        <h3 className="font-bold text-text-primary text-lg">Threat Modeling First</h3>
-                        <p className="text-text-muted text-sm leading-relaxed">
-                            Before scanning, I analyze the architecture to understand critical assets and potential attack vectors.
-                        </p>
+                        <div className="text-primary font-mono text-sm font-bold">01</div>
+                        <h3 className="font-bold text-text-primary text-xl">Security isn't a feature.<br/>It's architecture.</h3>
                     </div>
                     <div className="space-y-2">
-                        <h3 className="font-bold text-text-primary text-lg">Validation & Proof</h3>
-                        <p className="text-text-muted text-sm leading-relaxed">
-                            I don&apos;t just report scanner outputs. I validate findings with reproducible steps (PoCs) to eliminate false positives.
-                        </p>
+                        <div className="text-primary font-mono text-sm font-bold">02</div>
+                        <h3 className="font-bold text-text-primary text-xl">Simple systems survive.<br/>Complex systems fail.</h3>
                     </div>
                     <div className="space-y-2">
-                        <h3 className="font-bold text-text-primary text-lg">Remediation Focused</h3>
-                        <p className="text-text-muted text-sm leading-relaxed">
-                            Finding bugs is half the job. I provide engineers with clear, actionable context to fix issues at the root.
-                        </p>
+                        <div className="text-primary font-mono text-sm font-bold">03</div>
+                        <h3 className="font-bold text-text-primary text-xl">Measure first.<br/>Optimize second.</h3>
+                    </div>
+                    <div className="space-y-2">
+                        <div className="text-primary font-mono text-sm font-bold">04</div>
+                        <h3 className="font-bold text-text-primary text-xl">Automation removes<br/>human error.</h3>
+                    </div>
+                    <div className="space-y-2 md:col-span-2">
+                        <div className="text-primary font-mono text-sm font-bold">05</div>
+                        <h3 className="font-bold text-text-primary text-xl">If I can't explain the architecture,<br/>I don't understand it.</h3>
                     </div>
                 </div>
             </section>
@@ -110,10 +108,11 @@ export function AboutContent() {
                             </div>
                             <div className="text-secondary font-medium">Zentoja Technologies Private Limited <span className="text-text-muted font-normal">• Remote</span></div>
                             <ul className="list-disc list-inside text-text-muted space-y-2 pt-2">
-                                <li>Established and implemented cybersecurity policies and security standards to strengthen the organization’s security posture.</li>
-                                <li>Led security initiatives including vulnerability assessment, risk identification, remediation tracking, and security compliance.</li>
-                                <li>Developed security awareness resources, best-practice documentation, and security guidelines for internal teams.</li>
-                                <li>Performed threat analysis, log review, and incident monitoring to proactively detect and respond to security events.</li>
+                                <li>Built secure authentication workflows and zero-trust policies for distributed infrastructure.</li>
+                                <li>Remediated 50+ critical vulnerabilities before production deployment.</li>
+                                <li>Reduced attack surface by enforcing strict RBAC and eliminating exposed legacy endpoints.</li>
+                                <li>Automated vulnerability validation directly into the deployment pipeline.</li>
+                                <li>Introduced secure deployment practices, saving significant engineering hours on reactive fixes.</li>
                             </ul>
                             <div className="flex flex-wrap gap-2 pt-2">
                                 <SkillBadge name="Kali Linux" level="Applied" className="border-surface" />

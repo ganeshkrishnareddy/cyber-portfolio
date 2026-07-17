@@ -56,9 +56,9 @@ export function ContactContent() {
                     className="space-y-8"
                 >
                     <div>
-                        <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-6">Let&apos;s Build & Secure Something.</h1>
+                        <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-6">Let&apos;s build secure products.</h1>
                         <p className="text-xl text-text-muted leading-relaxed">
-                            Open to opportunities in Secure Software Engineering, Backend Development, and Application Security.
+                            Whether you&apos;re hiring or need engineering support, I&apos;d love to talk.
                         </p>
                     </div>
 

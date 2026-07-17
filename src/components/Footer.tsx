@@ -1,24 +1,29 @@
 import Link from 'next/link';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, CheckCircle2 } from 'lucide-react';
 
 export function Footer() {
     return (
         <footer className="bg-background border-t border-surface mt-10">
             <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-                {/* Availability Signal Banner */}
-                <div className="mb-6 p-4 rounded-xl bg-primary/5 border border-primary/20 flex flex-col md:flex-row items-center justify-between gap-4">
-                    <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                        <span className="text-sm font-bold text-text-primary tracking-wide">
-                            Currently open to full-time roles & high-impact internships
-                        </span>
+                {/* Status & Availability */}
+                <div className="mb-10 grid md:grid-cols-2 gap-8 bg-surface/5 rounded-2xl p-8 border border-surface">
+                    <div className="space-y-4">
+                        <h4 className="text-xs font-bold uppercase tracking-widest text-text-muted">Currently Building</h4>
+                        <ul className="space-y-3 text-sm text-text-primary font-medium">
+                            <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-primary/70" /> FlowMatch</li>
+                            <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-primary/70" /> AI Security Automation</li>
+                            <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-primary/70" /> Secure SaaS Infrastructure</li>
+                        </ul>
                     </div>
-                    <Link
-                        href="/contact"
-                        className="h-8 px-3 text-xs inline-flex items-center justify-center rounded-md font-medium transition-colors border border-primary text-primary hover:bg-primary/10"
-                    >
-                        Get in Touch
-                    </Link>
+                    <div className="space-y-4">
+                        <h4 className="text-xs font-bold uppercase tracking-widest text-text-muted">Available For</h4>
+                        <ul className="space-y-3 text-sm text-text-primary font-medium">
+                            <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-primary" /> Full-time</li>
+                            <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-primary" /> Founding Engineer</li>
+                            <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-primary" /> Security Engineering</li>
+                            <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-primary" /> AI Engineering</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6">
