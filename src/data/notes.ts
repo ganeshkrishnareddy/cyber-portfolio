@@ -60,20 +60,65 @@ return val
         title: "Designing Idempotent APIs",
         category: "API Design",
         lastUpdated: "2026-05-14",
-        summary: "How to safely handle retries in distributed systems using Idempotency Keys and distributed locking mechanisms."
+        summary: "How to safely handle retries in distributed systems using Idempotency Keys and distributed locking mechanisms.",
+        content: `
+            <h2>The Network is Unreliable</h2>
+            <p>In distributed systems, a network timeout does not mean the request failed. If a client sends a <code>POST /charge</code> request and the connection drops, the client doesn't know if the server charged the credit card or not. If the client retries, the user might be double-charged. This is why financial and state-mutating APIs must be Idempotent.</p>
+            
+            <h3>Idempotency Keys</h3>
+            <p>The standard solution (popularized by Stripe) is for the client to generate a unique UUID for every operation and pass it in a header, e.g., <code>Idempotency-Key: &lt;UUID&gt;</code>.</p>
+            <p>The server flow looks like this:</p>
+            <ol>
+                <li>Extract the Idempotency Key from the request header.</li>
+                <li>Check the database (or Redis) to see if this key has already been processed.</li>
+                <li><strong>If YES:</strong> Return the cached HTTP response from the original successful request.</li>
+                <li><strong>If NO:</strong> Acquire a distributed lock on the Idempotency Key to prevent concurrent retries from processing simultaneously.</li>
+                <li>Process the business logic (e.g., charge the card).</li>
+                <li>Save the result to the database mapped to the Idempotency Key, and return the response.</li>
+            </ol>
+            
+            <p>Always enforce an expiry (e.g., 24 hours) on Idempotency Keys so your cache does not grow infinitely.</p>
+        `
     },
     {
         slug: "message-queues",
         title: "Event-Driven Architecture",
         category: "Microservices",
         lastUpdated: "2026-04-30",
-        summary: "Decoupling services using RabbitMQ and Kafka. Handling dead-letter queues, message ordering, and exactly-once delivery semantics."
+        summary: "Decoupling services using RabbitMQ and Kafka. Handling dead-letter queues, message ordering, and exactly-once delivery semantics.",
+        content: `
+            <h2>Decoupling with Queues</h2>
+            <p>Synchronous HTTP calls between microservices create tightly coupled systems that fail cascadingly. If Service A calls Service B synchronously, and Service B is down, Service A fails too. Event-driven architecture solves this by introducing a Message Broker (like RabbitMQ or Apache Kafka) in the middle.</p>
+            
+            <h3>RabbitMQ vs Kafka</h3>
+            <ul>
+                <li><strong>RabbitMQ:</strong> A "smart broker, dumb consumer" model. Best for traditional task queueing where messages are ephemeral. It pushes messages to consumers and deletes them once acknowledged.</li>
+                <li><strong>Kafka:</strong> A "dumb broker, smart consumer" model. Best for high-throughput event streaming. It persists messages to disk as an immutable append-only log. Consumers track their own offsets and can "replay" events from the past.</li>
+            </ul>
+            
+            <h3>Handling Failures: Dead-Letter Queues (DLQ)</h3>
+            <p>If a consumer receives a message but crashes during processing (e.g., due to a malformed payload or a database timeout), it shouldn't just drop the message or retry infinitely. Instead, after N failed retries, the message should be routed to a Dead-Letter Queue. Engineers can monitor the DLQ, fix the underlying bug, and then replay the messages back into the main queue.</p>
+        `
     },
     {
         slug: "database-sharding",
         title: "Database Sharding & Partitioning",
         category: "Data Engineering",
         lastUpdated: "2026-03-12",
-        summary: "Horizontal vs Vertical scaling. Consistent hashing algorithms for distributing load across database clusters without downtime."
+        summary: "Horizontal vs Vertical scaling. Consistent hashing algorithms for distributing load across database clusters without downtime.",
+        content: `
+            <h2>The Limits of Vertical Scaling</h2>
+            <p>When a relational database becomes the bottleneck, the first instinct is Vertical Scaling: buying a bigger server with more RAM and CPU. However, vertical scaling has physical limits and becomes exponentially expensive. The ultimate solution is Horizontal Scaling via Sharding.</p>
+            
+            <h3>What is Sharding?</h3>
+            <p>Sharding involves splitting a single logical database across multiple physical database nodes (shards). For example, in a multi-tenant SaaS, you might put Users 1-1000 on Database A, and Users 1001-2000 on Database B.</p>
+            
+            <h3>The Sharding Key (Shard Key)</h3>
+            <p>Choosing the right shard key is the most critical decision in database architecture. If you shard by <code>Country</code>, and 90% of your users are in the US, one shard will be overwhelmed while the others sit idle (a "hot spot"). A good shard key distributes data uniformly across nodes.</p>
+            
+            <h2>Consistent Hashing</h2>
+            <p>If you use a simple modulo hash (e.g., <code>hash(user_id) % num_servers</code>), adding or removing a database server changes the modulus, requiring you to re-shuffle nearly all your data.</p>
+            <p><strong>Consistent Hashing</strong> solves this by mapping both the servers and the data keys onto a conceptual circle (a hash ring). When a new server is added, it only takes over a portion of the keys from its immediate neighbor on the ring, minimizing data migration and preventing downtime.</p>
+        `
     }
 ];

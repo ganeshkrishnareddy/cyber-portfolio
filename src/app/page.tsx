@@ -84,7 +84,7 @@ export default function Home() {
   }, [isAuditing]);
 
   return (
-    <div className="flex flex-col gap-12 md:gap-20 pb-12 md:pb-20">
+    <div className="flex flex-col gap-12 md:gap-20 pb-12 md:pb-20 pt-16 md:pt-24">
       {/* Hero Section */}
       <section className="relative min-h-[50vh] md:min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
