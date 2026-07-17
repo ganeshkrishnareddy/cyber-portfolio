@@ -13,6 +13,7 @@ const navItems = [
     { name: 'Projects', path: '/projects' },
     { name: 'Security Research', path: '/security-research' },
     { name: 'Engineering Journey', path: '/journey' },
+    { name: 'Build Log', path: '/build-log' },
     { name: 'Contact', path: '/contact' },
 ];
 

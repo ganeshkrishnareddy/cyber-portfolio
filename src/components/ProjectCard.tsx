@@ -2,6 +2,7 @@
 
 import { ExternalLink, Github, ShieldAlert, CheckCircle2, Shield } from 'lucide-react';
 import { SkillBadge } from '@/components/SkillBadge';
+import Link from 'next/link';
 
 interface ProjectCardProps {
     title: string;
@@ -47,9 +48,14 @@ export function ProjectCard({
                 <div className="space-y-2">
                     <div className="flex items-start justify-between">
                         <h3 className="text-xl font-bold text-text-primary group-hover:text-primary transition-colors">
-                            {title}
+                            {slug ? <Link href={`/projects/${slug}`}>{title}</Link> : title}
                         </h3>
-                        <div className="flex gap-2">
+                        <div className="flex gap-2 items-center">
+                            {slug && (
+                                <Link href={`/projects/${slug}`} className="text-xs font-bold uppercase tracking-widest text-primary hover:text-primary/80 transition-colors mr-2">
+                                    Case Study →
+                                </Link>
+                            )}
                             {githubUrl && (
                                 <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="p-2 text-text-muted hover:text-primary transition-colors" aria-label="View Source">
                                     <Github className="w-5 h-5" />

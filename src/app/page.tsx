@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { clsx } from 'clsx';
 import { ParticleBackground } from '@/components/3d/ParticleBackground';
-import { ArrowRight, Shield, Terminal as TerminalIcon, ShieldCheck, Lock, Globe } from 'lucide-react';
+import { ArrowRight, Shield, Terminal as TerminalIcon, ShieldCheck, Lock, Globe, Zap } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/Button';
 import { ProjectCard } from '@/components/ProjectCard';
@@ -322,26 +322,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Brief Skills / Stats */}
+      {/* Live Engineering Metrics */}
       <section className="border-y border-surface bg-surface/30">
         <div className="container max-w-7xl mx-auto px-4 py-10 md:py-12">
           <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
             <h2 className="text-3xl font-bold text-text-primary">Engineering Impact</h2>
-            <p className="text-text-muted">Quantifiable achievements from engineering security-first architectures and conducting in-depth vulnerability research.</p>
+            <p className="text-text-muted">Quantifiable metrics from building systems and breaking them.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto">
             {[
-              { label: "Critical Vulnerabilities Remediated", value: "50+", context: "Identified and fixed across labs, academic projects, and production-style environments", icon: Shield },
-              { label: "Secure Websites Deployed", value: "10+", context: "Architected and delivered via ProgVision for global clients", icon: Globe },
+              { label: "Critical Vulns Patched", value: "50+", icon: Shield },
+              { label: "Production Deployments", value: "20+", icon: Globe },
+              { label: "Sub-50ms APIs Built", value: "15+", icon: Zap },
+              { label: "Zero-Trust Systems", value: "4", icon: Lock },
             ].map((stat, i) => (
-              <TiltCard key={i} className="p-8 rounded-2xl bg-surface/50 border border-surface shadow-xl shadow-primary/5">
-                <div className="flex flex-col items-center justify-center text-center gap-3">
-                  <div className="p-4 bg-primary/10 rounded-full border border-primary/20">
-                    <stat.icon className="w-8 h-8 text-primary" />
-                  </div>
-                  <div className="text-4xl font-extrabold text-text-primary tracking-tight">{stat.value}</div>
-                  <div className="text-lg font-bold text-text-primary">{stat.label}</div>
-                  <div className="text-sm text-text-muted leading-relaxed opacity-80">{stat.context}</div>
+              <TiltCard key={i} className="p-6 rounded-2xl bg-surface/50 border border-surface shadow-xl shadow-primary/5">
+                <div className="flex flex-col items-center justify-center text-center gap-2">
+                  <stat.icon className="w-6 h-6 text-primary mb-2" />
+                  <div className="text-3xl font-extrabold text-text-primary tracking-tight">{stat.value}</div>
+                  <div className="text-sm font-bold text-text-muted">{stat.label}</div>
                 </div>
               </TiltCard>
             ))}
@@ -365,6 +364,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8">
             <ProjectCard
               title="FlowMatch"
+              slug="flowmatch"
               description="AI-powered platform to build and orchestrate autonomous AI agent workflows."
               whyItMatters="Simplifies the creation and management of multi-agent systems with visual orchestration."
               problem="Building multi-agent systems and managing their workflows is complex and lacks visual orchestration."
@@ -375,6 +375,7 @@ export default function Home() {
             />
             <ProjectCard
               title="PixoPDF (ZeroPDF Online Suite)"
+              slug="pixopdf"
               description="A fast, client-side PDF processing suite for editing, merging, and converting PDF documents."
               whyItMatters="Ensures document privacy by performing all PDF operations locally in the browser."
               problem="Many online PDF tools compromise privacy by uploading sensitive documents to external servers for processing."
@@ -385,6 +386,7 @@ export default function Home() {
             />
             <ProjectCard
               title="InstaDemoX"
+              slug="instademox"
               description="Interactive product demo creation platform for SaaS companies."
               whyItMatters="Empowers teams to create interactive product walkthroughs without writing code."
               problem="Creating engaging, interactive product demonstrations often requires significant engineering resources or complex video editing."
@@ -395,6 +397,7 @@ export default function Home() {
             />
             <ProjectCard
               title="LaunchWise"
+              slug="launchwise"
               description="All-in-one product launch and marketing automation platform for creators."
               whyItMatters="Streamlines the product launch process by centralizing waitlists, email automation, and analytics."
               problem="Founders struggle to coordinate multiple marketing channels, waitlists, and analytics during product launches."
