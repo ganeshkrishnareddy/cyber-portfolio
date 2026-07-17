@@ -115,7 +115,7 @@ export default function Home() {
             >
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium">
                 <ShieldCheck className="w-4 h-4" />
-                <span>Secure Software Engineer | Cybersecurity & Full-Stack</span>
+                <span>System Defense & Architecture | Full-Stack Security</span>
               </div>
 
               <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight leading-tight text-text-primary">

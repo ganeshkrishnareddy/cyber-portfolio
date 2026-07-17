@@ -3,6 +3,8 @@ export const projectsData = [
         slug: "flowmatch",
         title: "FlowMatch",
         shortDescription: "AI-powered platform to build and orchestrate autonomous AI agent workflows.",
+        methodology: "Developed a highly interactive UI with visual node-based workflow builder, real-time logging, and agent memory management.",
+        outcome: "Enabled users to seamlessly create, deploy, and monitor AI agent workflows with full observability.",
         overview: "FlowMatch is a visual orchestration engine designed to manage state and execution for autonomous AI agents. It provides a node-based interface for building complex multi-agent workflows, combined with real-time telemetry and execution logging.",
         problem: "Orchestrating autonomous AI agents requires maintaining state across distributed nodes while ensuring secure, isolated execution environments. Existing tools were either too rigid (no code) or lacked proper observability for agent hallucinations and failures.",
         requirements: "1. Sub-50ms latency for agent state updates. 2. Secure isolation of execution environments. 3. Visual node-based workflow builder. 4. Real-time WebSocket telemetry.",
@@ -31,6 +33,8 @@ graph TD
         slug: "pixopdf",
         title: "PixoPDF (ZeroPDF)",
         shortDescription: "A fast, client-side PDF processing suite for editing, merging, and converting PDF documents.",
+        methodology: "Built a privacy-first web application utilizing WebAssembly and client-side JavaScript to perform all PDF operations locally in the browser.",
+        outcome: "Delivered a secure, offline-capable PDF suite that ensures zero data leaves the user's device.",
         overview: "PixoPDF is a privacy-first web application that utilizes WebAssembly to process PDF files entirely within the user's browser, ensuring that sensitive documents never touch external servers.",
         problem: "Many online PDF tools compromise privacy by uploading sensitive documents (like tax returns or legal contracts) to external servers for processing. This creates a massive data exfiltration risk.",
         requirements: "1. 100% client-side execution. 2. Support for merging, splitting, and compressing PDFs. 3. Near-native performance for files up to 50MB.",
@@ -56,6 +60,8 @@ graph TD
         slug: "instademox",
         title: "InstaDemoX",
         shortDescription: "Interactive product demo creation platform for SaaS companies.",
+        methodology: "Engineered a platform that captures DOM states to generate highly interactive, clickable product walkthroughs without writing code.",
+        outcome: "Allowed marketing and sales teams to create self-serve, interactive product demos in minutes, boosting engagement.",
         overview: "InstaDemoX empowers marketing and sales teams to create highly interactive product walkthroughs by capturing DOM states rather than recording heavy video files.",
         problem: "Creating engaging product demonstrations requires significant engineering resources to build custom sandboxes, or forces users to watch non-interactive video recordings.",
         requirements: "1. Chrome extension to capture accurate DOM snapshots. 2. Web editor to add interactive hotspots. 3. Embeddable player for client websites.",
@@ -81,6 +87,8 @@ graph TD
         slug: "launchwise",
         title: "LaunchWise",
         shortDescription: "All-in-one product launch and marketing automation platform for creators.",
+        methodology: "Integrated waitlist management, email automation, and conversion tracking into a single dashboard using modern web technologies.",
+        outcome: "Streamlined the launch process, improving lead capture rates and providing actionable insights for successful product releases.",
         overview: "LaunchWise centralizes waitlist management, email automation, and conversion tracking into a single dashboard, streamlining the go-to-market motion for indie hackers.",
         problem: "Founders struggle to coordinate multiple fragmented marketing channels (Mailchimp, Google Analytics, Typeform) during critical product launches, leading to lost leads and poor conversion visibility.",
         requirements: "1. High-throughput waitlist capture API. 2. Email automation engine. 3. Real-time conversion dashboard.",
@@ -101,5 +109,78 @@ graph TD
         futureImprovements: "Integrating a Stripe billing portal for premium tiers and webhook support for Zapier integration.",
         tags: ["Marketing Automation", "SaaS", "Analytics", "Full-Stack"],
         githubUrl: "https://github.com/ganeshkrishnareddy/LaunchWise"
+    },
+    {
+        title: "CRAG – Cognitive Resilience and Automated Governance",
+        shortDescription: "AI-powered third-party vendor risk monitoring prototype with real-time risk scoring.",
+        problem: "Organizations struggle to monitor vendor risks in real-time, often relying on manual periodic surveys that fail to capture immediate threat posture changes.",
+        methodology: "Implemented RBAC for Admin/Vendor views, APScheduler-driven dynamic scoring engine, and compliance audit log. Designed a live glassmorphism dashboard with Chart.js visualizations.",
+        outcome: "Delivered a dynamic risk score monitoring dashboard with continuous vendor risk visibility, backed by FastAPI, SQLAlchemy, and Firebase.",
+        tags: ["Full-Stack", "AI Governance", "FastAPI", "SQLAlchemy", "Firebase"],
+        githubUrl: "https://github.com/ganeshkrishnareddy/CRAG"
+    },
+    {
+        title: "SentinelMind – Autonomous Threat Guardian for Agentic AI Systems",
+        shortDescription: "Zero-trust security layer and real-time monitoring gateway built for multi-agent AI ecosystems.",
+        problem: "As AI agents transition to taking autonomous, real-world actions, they become vulnerable to adversarial command hijacking, privilege escalation, and data exfiltration from compromised internal components.",
+        methodology: "Designed a zero-trust scoring engine with keyword analyzers and payload inspection. Built a highly responsive Next.js dashboard with Recharts telemetry visualizing threat vectors in real-time.",
+        outcome: "Achieved sub-12ms mitigation gateway latency with customizable threshold blocking (ALLOW / QUARANTINE / BLOCK) and immutable action audit logging.",
+        tags: ["AI/ML Security", "Next.js", "TypeScript", "Zero-Trust", "Threat Defense"],
+        githubUrl: "https://github.com/ganeshkrishnareddy/Sentinel-Mind"
+    },
+    {
+        title: "Sarathi AI – Agentic Customer Acquisition & Onboarding Concierge",
+        shortDescription: "Intelligent customer onboarding portal and automated qualification system engineered for State Bank of India.",
+        problem: "Traditional banking onboarding systems are slow and complex, often lacking conversational support, leading to high drop-off rates and insecure KYC validation.",
+        methodology: "Developed a Vite + React + TypeScript interface. Integrated Gemini LLM for product matching, qualification agents for suitability scoring, and a Compliance Agent for real-time conversation safety monitoring.",
+        outcome: "Successfully implemented dynamic e-KYC (Aadhaar & OTP simulation) and low-latency product matching, with interactive live log traces of agent orchestration.",
+        tags: ["Full-Stack", "AI Agents", "Vite + React", "Compliance Engine", "Secure Authentication"],
+        githubUrl: "https://github.com/ganeshkrishnareddy/SBIHackathonGFF2026",
+        liveUrl: "https://sarathi-sbi.web.app"
+    },
+    {
+        title: "IDS Defense – SOC-Grade ML Intrusion Detection",
+        shortDescription: "Addressed lack of real-time visibility into network attacks faced by SOC teams handling high-volume logs.",
+        problem: "Network security teams lack real-time visibility into complex attack vectors, overwhelmed by raw logs without actionable insights or ML context.",
+        methodology: "Developed a real-time intrusion detection system with ML-based anomaly detection and live SOC dashboards. Implemented XGBoost models with WebSocket streaming to detect DDoS, SQL injection, and brute-force attacks.",
+        outcome: "Integrated high-volume network log ingestion pipeline to provide continuous visibility for SOC analysts, delivering sub-10ms inference latency.",
+        tags: ["Full-Stack", "ML/AI", "XGBoost", "FastAPI", "Next.js"],
+        githubUrl: "https://github.com/ganeshkrishnareddy/IDS-Defense"
+    },
+    {
+        title: "MailShield – AI-Powered Phishing Defense",
+        shortDescription: "Automated phishing detection system for email and URL analysis targeting enterprise spam filter gaps.",
+        problem: "High-velocity phishing attacks bypassing traditional spam filters, leading to credential theft and malware delivery within organizations.",
+        methodology: "Applied heuristic-based AI analysis with sandbox validation for real-time threat classification and alerting. Engineered URL reputation checks and header anomaly detection.",
+        outcome: "Reduced phishing exposure by proactive URL blocking and sandbox validation, protecting enterprise communication channels.",
+        tags: ["Python", "AI/ML Heuristics", "API Security", "Automation"],
+        githubUrl: "https://github.com/ganeshkrishnareddy/mailsheild"
+    },
+    {
+        title: "MealRoute – Secure Logistics Platform",
+        shortDescription: "Production-style logistics system with secure authentication, RBAC, and real-time synchronization for food delivery operations.",
+        problem: "Unauthorized access risks and data leakage across multi-tenant delivery operations.",
+        methodology: "Implemented secure auth flows, role-based dashboards, and encrypted data channels.",
+        outcome: "Prevented unauthorized access to operational data and streamlined delivery management.",
+        tags: ["Full-Stack", "Backend", "Secure Systems", "Firebase"],
+        githubUrl: "https://github.com/ganeshkrishnareddy/mealroute"
+    },
+    {
+        title: "Android Security – Insecure Storage & Network Analysis",
+        shortDescription: "Conducted deep-dive security research into Android application vulnerabilities, focusing on insecure data persistence and network communication flaws.",
+        problem: "Sensitive JWT tokens were stored in plain-text shared preferences, and lack of SSL pinning allowed for easy MITM interception of encrypted traffic.",
+        methodology: "Performed static analysis with JADX/MobSF. Utilized Frida for dynamic runtime hooking to bypass SSL pinning and inspect binary data structures.",
+        outcome: "Secured local storage using the Android Keystore system and implemented robust certificate pinning, eliminating local data theft vectors.",
+        tags: ["AppSec", "Android", "APIs", "Security Research"],
+        githubUrl: "https://github.com/ganeshkrishnareddy/AndroidSecurityProject"
+    },
+    {
+        title: "Web App Assessment & Risk Validation",
+        shortDescription: "Conducted structured security assessments to identify data exposure, authorization flaws, and access control weaknesses.",
+        problem: "Exposed API endpoints allowed Insecure Object Reference (IDOR) and weak session management, risking unauthorized multi-tenant data access.",
+        methodology: "Manual intercept testing with Burp Suite for broken access control and session hijacks. Automated baseline scans with OWASP ZAP.",
+        outcome: "Eliminated IDOR risks and stored XSS flaws by enforcing strict RBAC and server-side input validation across the API layer.",
+        tags: ["Backend", "AppSec", "APIs", "OWASP ASVS"],
+        githubUrl: "https://github.com/ganeshkrishnareddy"
     }
 ];
