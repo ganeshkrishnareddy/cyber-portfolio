@@ -115,11 +115,24 @@ export function SecurityResearchContent() {
                 </div>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-                {findings.map((finding, index) => (
-                    <ProjectCard3D key={finding.title} delay={index * 0.1}>
-                        <div className="group relative rounded-xl border border-surface bg-surface/50 overflow-hidden hover:border-primary/50 transition-colors duration-300 flex flex-col h-full">
-                            <div className="p-6 space-y-6 flex-grow">
+            <div className="relative border-l border-surface ml-4 md:ml-6 space-y-12">
+                {findings
+                    .sort((a, b) => new Date(b.timeline).getTime() - new Date(a.timeline).getTime())
+                    .map((finding, index) => (
+                    <motion.div 
+                        key={finding.title}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                        className="relative pl-8 md:pl-12"
+                    >
+                        {/* Timeline Node */}
+                        <div className="absolute -left-[21px] top-1 p-2 rounded-full bg-background border border-surface text-text-muted">
+                            <ShieldAlert className="w-4 h-4 text-primary" />
+                        </div>
+
+                        <div className="group relative rounded-xl border border-surface bg-surface/30 overflow-hidden hover:border-primary/50 transition-colors duration-300 flex flex-col">
+                            <div className="p-6 space-y-6">
                                 {/* Header */}
                                 <div className="space-y-2">
                                     <div className="flex items-start justify-between">
@@ -134,7 +147,7 @@ export function SecurityResearchContent() {
                                 </div>
 
                                 {/* Metadata Grid */}
-                                <div className="grid grid-cols-2 gap-4 py-4 border-y border-surface/50">
+                                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-4 border-y border-surface/50">
                                     <div className="space-y-1">
                                         <div className="flex items-center gap-1.5 text-[10px] uppercase font-bold text-text-muted tracking-wider">
                                             <ShieldAlert className="w-3.5 h-3.5" /> Severity
@@ -188,7 +201,7 @@ export function SecurityResearchContent() {
                                 ))}
                             </div>
                         </div>
-                    </ProjectCard3D>
+                    </motion.div>
                 ))}
             </div>
         </div>

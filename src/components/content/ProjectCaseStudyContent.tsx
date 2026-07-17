@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Github, ArrowLeft, Terminal as TerminalIcon, Database, Server, Shield, Zap, RefreshCcw, Wrench } from 'lucide-react';
 import Link from 'next/link';
+import Mermaid from '@/components/Mermaid';
 
 export function ProjectCaseStudyContent({ project }: { project: any }) {
     return (
@@ -56,9 +57,7 @@ export function ProjectCaseStudyContent({ project }: { project: any }) {
                     <section className="space-y-4">
                         <h2 className="text-2xl font-bold text-text-primary">System Architecture</h2>
                         <div className="p-6 rounded-xl bg-[#0d1117] border border-surface overflow-x-auto">
-                            <pre className="text-primary font-mono text-sm leading-loose">
-                                {project.architecture}
-                            </pre>
+                            <Mermaid chart={project.architecture} />
                         </div>
                     </section>
 

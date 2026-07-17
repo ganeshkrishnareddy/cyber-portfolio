@@ -9,6 +9,9 @@ import Link from 'next/link';
 import { Button } from '@/components/Button';
 import { ProjectCard } from '@/components/ProjectCard';
 import { TiltCard } from '@/components/3d/TiltCard';
+import { GitHubCalendar } from 'react-github-calendar';
+import { blogData } from '@/data/blog';
+import { notesData } from '@/data/notes';
 
 // Hacker & Security Profile Icons
 const HackerOneIcon = () => (
@@ -135,12 +138,12 @@ export default function Home() {
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                 </Link>
-                <Link href="/journey">
+                <a href="/P_Ganesh_Krishna_Reddy_Resume.pdf" download>
                   <Button variant="outline" size="lg" className="gap-2">
-                    Engineering Journey
+                    Download Resume
                     <ArrowRight className="w-4 h-4" />
                   </Button>
-                </Link>
+                </a>
                 <Button
                   onClick={runAudit}
                   variant="ghost"
@@ -278,46 +281,21 @@ export default function Home() {
 
 
 
-      {/* Top Expertise & Certifications */}
-      <section className="container max-w-7xl mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Industry-Recognized Certifications */}
-          <div className="p-8 rounded-2xl bg-surface/30 border border-surface backdrop-blur-sm space-y-6">
-            <div className="flex items-center gap-3">
-              <div className="p-2 bg-primary/10 rounded-lg">
-                <ShieldCheck className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold text-text-primary">Industry-Recognized Certifications</h3>
-            </div>
-            <div className="grid sm:grid-cols-2 gap-4">
-              {[
-                { name: "CompTIA CySA+", issuer: "Cybersecurity Analyst", color: "from-primary/20", icon: "🛡️" },
-                { name: "CompTIA PenTest+", issuer: "Penetration Tester", color: "from-secondary/20", icon: "⚔️" }
-              ].map((cert, i) => (
-                <div key={i} className={`p-4 rounded-xl bg-gradient-to-br ${cert.color} to-transparent border border-white/5 space-y-1 group hover:border-primary/50 transition-colors`}>
-                  <div className="text-lg mb-1">{cert.icon}</div>
-                  <div className="font-bold text-text-primary">{cert.name}</div>
-                  <div className="text-xs text-text-muted">{cert.issuer}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Core Expertise Slots */}
-          <div className="p-8 rounded-2xl bg-surface/30 border border-surface backdrop-blur-sm space-y-6">
-            <div className="flex items-center gap-3">
-              <div className="p-2 bg-secondary/10 rounded-lg">
-                <Lock className="w-6 h-6 text-secondary" />
-              </div>
-              <h3 className="text-xl font-bold text-text-primary">Core Expertise</h3>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              {['Application Security', 'Secure System Design', 'Full-Stack Engineering', 'Cloud Security', 'DevSecOps', 'Threat Modeling'].map((skill) => (
-                <span key={skill} className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium text-text-muted hover:text-primary hover:border-primary/50 transition-all cursor-default">
-                  {skill}
-                </span>
-              ))}
-            </div>
+      {/* Credibility Bar */}
+      <section className="border-y border-surface bg-surface/30 py-6">
+        <div className="container max-w-7xl mx-auto px-4">
+          <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 text-sm font-bold text-text-muted uppercase tracking-widest text-center">
+            <span className="flex items-center gap-2 hover:text-primary transition-colors"><ShieldCheck className="w-4 h-4" /> CompTIA CySA+</span>
+            <span className="hidden md:inline text-surface-hover">•</span>
+            <span className="flex items-center gap-2 hover:text-primary transition-colors"><ShieldCheck className="w-4 h-4" /> CompTIA PenTest+</span>
+            <span className="hidden md:inline text-surface-hover">•</span>
+            <span className="flex items-center gap-2 hover:text-primary transition-colors"><TerminalIcon className="w-4 h-4" /> Microsoft Build Hackathon</span>
+            <span className="hidden md:inline text-surface-hover">•</span>
+            <span className="flex items-center gap-2 hover:text-primary transition-colors"><Lock className="w-4 h-4" /> 50+ Vulnerabilities</span>
+            <span className="hidden md:inline text-surface-hover">•</span>
+            <span className="flex items-center gap-2 hover:text-primary transition-colors"><Globe className="w-4 h-4" /> 10+ Production Systems</span>
+            <span className="hidden md:inline text-surface-hover">•</span>
+            <span className="flex items-center gap-2 hover:text-primary transition-colors"><Shield className="w-4 h-4" /> Bug Bounty Research</span>
           </div>
         </div>
       </section>
@@ -411,6 +389,93 @@ export default function Home() {
           <Link href="/projects" className="sm:hidden flex items-center justify-center gap-1 text-primary hover:text-primary/80 transition-colors text-sm font-medium mt-4">
             View All Projects <ArrowRight className="w-4 h-4" />
           </Link>
+        </div>
+      </section>
+
+      {/* GitHub Activity & Open Source */}
+      <section className="container max-w-7xl mx-auto px-4 py-8">
+        <div className="p-8 rounded-2xl bg-surface/30 border border-surface">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-8">
+            <div>
+              <h2 className="text-2xl font-bold text-text-primary flex items-center gap-2">
+                <Globe className="w-6 h-6 text-primary" /> Open Source & Contributions
+              </h2>
+              <p className="text-text-muted mt-1">Continuous engineering and security research.</p>
+            </div>
+            <div className="flex gap-4">
+              <div className="text-center">
+                <div className="text-xl font-bold text-text-primary">64</div>
+                <div className="text-xs uppercase tracking-widest text-text-muted font-bold">Repos</div>
+              </div>
+              <div className="text-center">
+                <div className="text-xl font-bold text-text-primary">820+</div>
+                <div className="text-xs uppercase tracking-widest text-text-muted font-bold">Commits</div>
+              </div>
+              <div className="text-center">
+                <div className="text-xl font-bold text-primary">12</div>
+                <div className="text-xs uppercase tracking-widest text-text-muted font-bold">PRs</div>
+              </div>
+            </div>
+          </div>
+          <div className="overflow-x-auto w-full flex justify-center opacity-80 hover:opacity-100 transition-opacity">
+            <GitHubCalendar 
+              username="ganeshkrishnareddy" 
+              colorScheme="dark" 
+              theme={{
+                dark: ['#1A1A1A', '#00441b', '#006d2c', '#238b45', '#FFFFFF']
+              }}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Engineering Blog & Notes */}
+      <section className="container max-w-7xl mx-auto px-4">
+        <div className="grid md:grid-cols-2 gap-12">
+          
+          {/* Engineering Blog */}
+          <div className="space-y-6">
+            <div className="flex items-center justify-between border-b border-surface pb-2">
+              <h2 className="text-2xl font-bold text-text-primary">Engineering Blog</h2>
+              <Link href="/blog" className="text-sm font-medium text-primary hover:text-primary/80">View All</Link>
+            </div>
+            <div className="space-y-4">
+              {blogData.slice(0, 3).map((post) => (
+                <Link href={`/blog/${post.slug}`} key={post.slug} className="block group">
+                  <div className="p-5 rounded-xl bg-surface/30 border border-surface hover:border-primary/30 transition-colors">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-xs font-mono text-text-muted">{post.date}</span>
+                      <span className="text-xs font-bold text-primary">{post.readTime}</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-text-primary group-hover:text-primary transition-colors">{post.title}</h3>
+                    <p className="text-sm text-text-muted mt-2 line-clamp-2">{post.summary}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* System Design Notes */}
+          <div className="space-y-6">
+            <div className="flex items-center justify-between border-b border-surface pb-2">
+              <h2 className="text-2xl font-bold text-text-primary">System Design Notes</h2>
+              <Link href="/notes" className="text-sm font-medium text-primary hover:text-primary/80">View All</Link>
+            </div>
+            <div className="space-y-4">
+              {notesData.slice(0, 4).map((note) => (
+                <Link href={`/notes/${note.slug}`} key={note.slug} className="block group">
+                  <div className="p-4 rounded-xl bg-surface/30 border border-surface hover:border-primary/30 transition-colors flex justify-between items-center">
+                    <div>
+                      <div className="text-[10px] font-bold uppercase tracking-widest text-text-muted mb-1">{note.category}</div>
+                      <h3 className="font-bold text-text-primary group-hover:text-primary transition-colors">{note.title}</h3>
+                    </div>
+                    <ArrowRight className="w-4 h-4 text-surface-hover group-hover:text-primary transition-colors" />
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
     </div>

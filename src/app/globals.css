@@ -4,13 +4,13 @@
   --font-sans: var(--font-inter);
   --font-mono: var(--font-jetbrains-mono);
 
-  --color-background: #050505;
-  --color-surface: #0F0F0F;
-  --color-surface-hover: #1A1A1A;
-  --color-primary: #00FF41;
-  --color-secondary: #3B82F6;
+  --color-background: #000000;
+  --color-surface: #111111;
+  --color-surface-hover: #222222;
+  --color-primary: #FFFFFF;
+  --color-secondary: #888888;
   --color-text-primary: #EDEDED;
-  --color-text-muted: #B1B1B6;
+  --color-text-muted: #888888;
 }
 
 @layer base {

@@ -65,28 +65,36 @@ export function AboutContent() {
             <section className="space-y-8">
                 <div className="flex items-center gap-2 pb-2 border-b border-surface">
                     <TerminalIcon className="w-6 h-6 text-primary" />
-                    <h2 className="text-2xl font-bold text-text-primary">Engineering Principles</h2>
+                    <h2 className="text-2xl font-bold text-text-primary">Engineering Philosophy</h2>
                 </div>
                 <div className="grid md:grid-cols-2 gap-8">
                     <div className="space-y-2">
                         <div className="text-primary font-mono text-sm font-bold">01</div>
-                        <h3 className="font-bold text-text-primary text-xl">Security isn't a feature.<br/>It's architecture.</h3>
+                        <h3 className="font-bold text-text-primary text-xl flex items-center gap-2">Shift Left is Dead.<br/>Build Secure by Default.</h3>
+                        <p className="text-text-muted leading-relaxed">
+                            I don't believe security should happen after deployment. Or even in the CI pipeline. Security is an architectural property. Every pull request, every system design document, every database schema should explicitly improve the security posture.
+                        </p>
                     </div>
                     <div className="space-y-2">
                         <div className="text-primary font-mono text-sm font-bold">02</div>
-                        <h3 className="font-bold text-text-primary text-xl">Simple systems survive.<br/>Complex systems fail.</h3>
+                        <h3 className="font-bold text-text-primary text-xl flex items-center gap-2">Complexity is the Enemy<br/>of Security.</h3>
+                        <p className="text-text-muted leading-relaxed">
+                            Hackers don't exploit encryption algorithms; they exploit complex state machines, dangling pointers, and misconfigured YAML files. I optimize for radical simplicity. If a junior engineer can't hold the architecture in their head, it's not secure.
+                        </p>
                     </div>
                     <div className="space-y-2">
                         <div className="text-primary font-mono text-sm font-bold">03</div>
-                        <h3 className="font-bold text-text-primary text-xl">Measure first.<br/>Optimize second.</h3>
+                        <h3 className="font-bold text-text-primary text-xl flex items-center gap-2">Default to Zero-Trust.</h3>
+                        <p className="text-text-muted leading-relaxed">
+                            The internal network is compromised. The database is exposed. The LLM prompt is hijacked. I build systems with the fundamental assumption that the perimeter has already failed.
+                        </p>
                     </div>
                     <div className="space-y-2">
                         <div className="text-primary font-mono text-sm font-bold">04</div>
-                        <h3 className="font-bold text-text-primary text-xl">Automation removes<br/>human error.</h3>
-                    </div>
-                    <div className="space-y-2 md:col-span-2">
-                        <div className="text-primary font-mono text-sm font-bold">05</div>
-                        <h3 className="font-bold text-text-primary text-xl">If I can't explain the architecture,<br/>I don't understand it.</h3>
+                        <h3 className="font-bold text-text-primary text-xl flex items-center gap-2">What I Refuse to Build.</h3>
+                        <p className="text-text-muted leading-relaxed">
+                            I refuse to build systems that prioritize feature velocity over user data privacy. I don't compromise on JWT handling, I don't accept "we'll add auth later," and I never log PII.
+                        </p>
                     </div>
                 </div>
             </section>

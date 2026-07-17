@@ -15,6 +15,7 @@ interface ProjectCardProps {
     githubUrl?: string;
     liveUrl?: string;
     image?: string; // Optional for now
+    slug?: string;
 }
 
 export function ProjectCard({
@@ -27,6 +28,7 @@ export function ProjectCard({
     whyItMatters,
     githubUrl,
     liveUrl,
+    slug,
 }: ProjectCardProps) {
     return (
         <div className="group relative rounded-xl border border-surface bg-surface/50 overflow-hidden hover:border-primary/50 transition-colors duration-300">
