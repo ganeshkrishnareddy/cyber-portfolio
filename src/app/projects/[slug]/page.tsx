@@ -3,9 +3,11 @@ import { projectsData } from '@/data/projects';
 import { ProjectCaseStudyContent } from '@/components/content/ProjectCaseStudyContent';
 
 export async function generateStaticParams() {
-    return projectsData.map((project) => ({
-        slug: project.slug,
-    }));
+    return projectsData
+        .filter((project) => project.slug)
+        .map((project) => ({
+            slug: project.slug,
+        }));
 }
 
 export default function ProjectPage({ params }: { params: { slug: string } }) {
