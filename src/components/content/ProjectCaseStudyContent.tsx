@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, ArrowLeft, Terminal as TerminalIcon, Database, Server, Shield, Zap, RefreshCcw, Wrench } from 'lucide-react';
+import { Github, ArrowLeft, Terminal as TerminalIcon, Database, Server, Shield, Zap, RefreshCcw, Wrench, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import Mermaid from '@/components/Mermaid';
 
@@ -19,9 +19,16 @@ export function ProjectCaseStudyContent({ project }: { project: any }) {
             >
                 <div className="flex flex-wrap items-center gap-4">
                     <h1 className="text-4xl md:text-6xl font-bold text-text-primary tracking-tight">{project.title}</h1>
+                    {project.liveUrl && (
+                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="p-2 px-4 bg-primary/10 border border-primary/20 rounded-lg text-primary hover:bg-primary/20 transition-colors flex items-center gap-2">
+                            <span className="text-sm font-medium">Live App</span>
+                            <ExternalLink className="w-5 h-5" />
+                        </a>
+                    )}
                     {project.githubUrl && (
-                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="p-2 bg-surface border border-surface-hover rounded-lg text-text-muted hover:text-white transition-colors">
-                            <Github className="w-6 h-6" />
+                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="p-2 bg-surface border border-surface-hover rounded-lg text-text-muted hover:text-white transition-colors flex items-center gap-2">
+                            <Github className="w-5 h-5" />
+                            <span className="text-sm font-medium">GitHub</span>
                         </a>
                     )}
                 </div>
@@ -56,9 +63,13 @@ export function ProjectCaseStudyContent({ project }: { project: any }) {
 
                     <section className="space-y-4">
                         <h2 className="text-2xl font-bold text-text-primary">System Architecture</h2>
-                        <div className="p-6 rounded-xl bg-[#0d1117] border border-surface overflow-x-auto">
-                            <Mermaid chart={project.architecture} />
-                        </div>
+                        {project.architecture?.includes('graph') || project.architecture?.includes('flowchart') ? (
+                            <div className="p-6 rounded-xl bg-[#0d1117] border border-surface overflow-x-auto">
+                                <Mermaid chart={project.architecture} />
+                            </div>
+                        ) : (
+                            <p className="text-text-muted leading-relaxed text-lg border-l-4 border-surface pl-4">{project.architecture}</p>
+                        )}
                     </section>
 
                     <section className="space-y-4">

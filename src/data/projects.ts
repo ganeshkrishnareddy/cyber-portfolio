@@ -27,7 +27,8 @@ graph TD
         lessonsLearned: "Discovered that WebSocket connection drops in serverless environments required building a robust client-side reconnection and event queuing mechanism.",
         futureImprovements: "Migrating the core execution engine to Rust for memory safety and significantly lower baseline resource consumption.",
         tags: ["AI Agents", "Workflow Orchestration", "Next.js", "Full-Stack"],
-        githubUrl: "https://github.com/ganeshkrishnareddy/FlowMatch"
+        githubUrl: "https://github.com/ganeshkrishnareddy/FlowMatch",
+        liveUrl: "https://flowmatch.tech/"
     },
     {
         slug: "pixopdf",
@@ -54,7 +55,8 @@ graph TD
         lessonsLearned: "Managing memory leaks in WebAssembly within a React environment is non-trivial. Required deep dive into manual garbage collection and object URL revocation.",
         futureImprovements: "Implementing a local-first encrypted storage feature via IndexedDB to allow users to save workspaces safely.",
         tags: ["WebAssembly", "Privacy-First", "Client-Side", "Next.js"],
-        githubUrl: "https://github.com/ganeshkrishnareddy/PixoPDF"
+        githubUrl: "https://github.com/ganeshkrishnareddy/PixoPDF",
+        liveUrl: "https://pixopdf.online/"
     },
     {
         slug: "instademox",
