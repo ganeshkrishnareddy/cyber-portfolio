@@ -202,6 +202,67 @@ export default function Home() {  return (
 
 
 
+      {/* Bug Bounty Achievement */}
+      <section className="relative">
+        <div className="container max-w-7xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="relative overflow-hidden rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/10 via-background to-secondary/10"
+          >
+            {/* Ambient glows */}
+            <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-primary/10 blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-24 -right-24 w-72 h-72 rounded-full bg-secondary/10 blur-3xl pointer-events-none" />
+
+            <div className="relative p-8 md:p-12 flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+              {/* Badge Art */}
+              <div className="relative shrink-0">
+                <div className="absolute inset-0 bg-primary/40 rounded-3xl blur-2xl animate-pulse" />
+                <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-3xl border border-primary/40 bg-background flex flex-col items-center justify-center gap-1 shadow-[0_0_40px_rgba(var(--primary-rgb),0.2)]">
+                  <Trophy className="w-10 h-10 text-primary" />
+                  <span className="text-2xl font-extrabold text-primary font-mono">$400</span>
+                  <span className="text-[9px] font-mono uppercase tracking-widest text-text-muted">USD &middot; HackerOne</span>
+                </div>
+              </div>
+
+              {/* Copy */}
+              <div className="text-center lg:text-left space-y-4 flex-1">
+                <div className="space-y-1">
+                  <h2 className="text-2xl md:text-3xl font-bold text-text-primary">
+                    First Paid Bug Bounty &mdash; <span className="text-primary">$400 USD on HackerOne</span>
+                  </h2>
+                  <p className="text-text-muted leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                    Awarded Jul 29, 2026 on the CLEAR program and paid via PayPal Jul 30, 2026 &mdash; earning the
+                    HackerOne <span className="text-primary font-semibold">Bounty Hunter</span> badge. Every finding
+                    disclosed responsibly through the vendor&rsquo;s coordinated channel.
+                  </p>
+                </div>
+                <div className="flex flex-wrap justify-center lg:justify-start gap-2">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-text-muted bg-surface/50 border border-surface px-2 py-1 rounded">Report #3851049</span>
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-text-muted bg-surface/50 border border-surface px-2 py-1 rounded">CLEAR Program</span>
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-text-muted bg-surface/50 border border-surface px-2 py-1 rounded">Bounty Hunter Badge</span>
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-text-muted bg-surface/50 border border-surface px-2 py-1 rounded">PayPal Payout</span>
+                </div>
+                <div className="flex flex-wrap justify-center lg:justify-start gap-3 pt-2">
+                  <Link href="/security-research">
+                    <Button className="gap-2">
+                      View the Research
+                      <ArrowRight className="w-4 h-4" />
+                    </Button>
+                  </Link>
+                  <a href="https://hackerone.com/pganeshkrishnareddy" target="_blank" rel="noopener">
+                    <Button variant="outline" className="gap-2">
+                      Verify on HackerOne
+                    </Button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Credibility Bar */}
       <section className="border-y border-surface bg-surface/30 py-6">
         <div className="container max-w-7xl mx-auto px-4">
