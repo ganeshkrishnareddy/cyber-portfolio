@@ -83,7 +83,7 @@ export default function Home() {
                 <span>System Defense & Architecture | Full-Stack Security</span>
               </div>
 
-              <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight leading-tight text-text-primary">
+              <h1 className="text-3xl sm:text-4xl md:text-7xl font-extrabold tracking-tight leading-tight text-text-primary">
                 Secure Software Engineer.<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
                   I build software that survives production.
@@ -126,25 +126,25 @@ export default function Home() {
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-6 border-t border-white/5">
                 <span className="text-[10px] font-mono uppercase tracking-widest text-text-muted">Security Profiles:</span>
                 <div className="flex flex-wrap items-center gap-4">
-                  <Link href="https://hackerone.com/pganeshkrishnareddy" target="_blank" title="HackerOne" className="text-text-muted hover:text-[#ff6600] transition-all hover:scale-110 duration-200">
+                  <Link href="https://hackerone.com/pganeshkrishnareddy" target="_blank" title="HackerOne" className="inline-flex items-center justify-center p-2.5 text-text-muted hover:text-[#ff6600] transition-all hover:scale-110 duration-200">
                     <HackerOneIcon />
                   </Link>
-                  <Link href="https://yeswehack.com/hunters/pganeshkrishnareddy" target="_blank" title="YesWeHack" className="text-text-muted hover:text-[#e91e63] transition-all hover:scale-110 duration-200">
+                  <Link href="https://yeswehack.com/hunters/pganeshkrishnareddy" target="_blank" title="YesWeHack" className="inline-flex items-center justify-center p-2.5 text-text-muted hover:text-[#e91e63] transition-all hover:scale-110 duration-200">
                     <YesWeHackIcon />
                   </Link>
-                  <Link href="https://profile.hackthebox.com/profile/019ec51d-f016-710d-88bb-8a98ebb8cc9b" target="_blank" title="Hack The Box" className="text-text-muted hover:text-[#9fe522] transition-all hover:scale-110 duration-200">
+                  <Link href="https://profile.hackthebox.com/profile/019ec51d-f016-710d-88bb-8a98ebb8cc9b" target="_blank" title="Hack The Box" className="inline-flex items-center justify-center p-2.5 text-text-muted hover:text-[#9fe522] transition-all hover:scale-110 duration-200">
                     <HackTheBoxIcon />
                   </Link>
-                  <Link href="https://tryhackme.com/p/pganeshkrishnareddy" target="_blank" title="TryHackMe" className="text-text-muted hover:text-[#de112b] transition-all hover:scale-110 duration-200">
+                  <Link href="https://tryhackme.com/p/pganeshkrishnareddy" target="_blank" title="TryHackMe" className="inline-flex items-center justify-center p-2.5 text-text-muted hover:text-[#de112b] transition-all hover:scale-110 duration-200">
                     <TryHackMeIcon />
                   </Link>
-                  <Link href="https://cyber.comolho.com/researcher/profile/pganeshkrishnareddy_7104d6dc/" target="_blank" title="Comolho" className="text-text-muted hover:text-[#00bcd4] transition-all hover:scale-110 duration-200">
+                  <Link href="https://cyber.comolho.com/researcher/profile/pganeshkrishnareddy_7104d6dc/" target="_blank" title="Comolho" className="inline-flex items-center justify-center p-2.5 text-text-muted hover:text-[#00bcd4] transition-all hover:scale-110 duration-200">
                     <ComolhoIcon />
                   </Link>
-                  <Link href="https://www.hackerearth.com/@pganeshkrishnareddy/" target="_blank" title="HackerEarth" className="text-text-muted hover:text-[#20d48a] transition-all hover:scale-110 duration-200">
+                  <Link href="https://www.hackerearth.com/@pganeshkrishnareddy/" target="_blank" title="HackerEarth" className="inline-flex items-center justify-center p-2.5 text-text-muted hover:text-[#20d48a] transition-all hover:scale-110 duration-200">
                     <HackerEarthIcon />
                   </Link>
-                  <Link href="https://x.com/_this_is_ganesh" target="_blank" title="X (Twitter)" className="text-text-muted hover:text-white transition-all hover:scale-110 duration-200">
+                  <Link href="https://x.com/_this_is_ganesh" target="_blank" title="X (Twitter)" className="inline-flex items-center justify-center p-2.5 text-text-muted hover:text-white transition-all hover:scale-110 duration-200">
                     <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
                         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                     </svg>
@@ -381,7 +381,7 @@ export default function Home() {
             />
           </div>
 
-          <Link href="/projects" className="sm:hidden flex items-center justify-center gap-1 text-primary hover:text-primary/80 transition-colors text-sm font-medium mt-4">
+          <Link href="/projects" className="sm:hidden flex items-center justify-center gap-1 text-primary hover:text-primary/80 transition-colors text-sm font-medium mt-4 py-2">
             View All Projects <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
@@ -434,7 +434,7 @@ export default function Home() {
           <div className="space-y-6">
             <div className="flex items-center justify-between border-b border-surface pb-2">
               <h2 className="text-2xl font-bold text-text-primary">Engineering Blog</h2>
-              <Link href="/blog" className="text-sm font-medium text-primary hover:text-primary/80">View All</Link>
+              <Link href="/blog" className="text-sm font-medium text-primary hover:text-primary/80 py-2">View All</Link>
             </div>
             <div className="space-y-4">
               {blogData.slice(0, 3).map((post) => (
@@ -456,7 +456,7 @@ export default function Home() {
           <div className="space-y-6">
             <div className="flex items-center justify-between border-b border-surface pb-2">
               <h2 className="text-2xl font-bold text-text-primary">System Design Notes</h2>
-              <Link href="/notes" className="text-sm font-medium text-primary hover:text-primary/80">View All</Link>
+              <Link href="/notes" className="text-sm font-medium text-primary hover:text-primary/80 py-2">View All</Link>
             </div>
             <div className="space-y-4">
               {notesData.slice(0, 4).map((note) => (

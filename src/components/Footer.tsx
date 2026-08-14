@@ -15,13 +15,13 @@ export function Footer() {
                             Building software that survives production. Specializing in full-stack engineering, application security, and zero-trust infrastructure.
                         </p>
                         <div className="flex items-center space-x-4">
-                            <Link href="https://github.com/ganeshkrishnareddy" target="_blank" className="text-text-muted hover:text-primary transition-colors">
+                            <Link href="https://github.com/ganeshkrishnareddy" target="_blank" className="inline-flex items-center justify-center p-2.5 text-text-muted hover:text-primary transition-colors">
                                 <Github className="h-5 w-5" />
                             </Link>
-                            <Link href="https://linkedin.com/in/pganeshkrishnareddy" target="_blank" className="text-text-muted hover:text-[#0077b5] transition-colors">
+                            <Link href="https://linkedin.com/in/pganeshkrishnareddy" target="_blank" className="inline-flex items-center justify-center p-2.5 text-text-muted hover:text-[#0077b5] transition-colors">
                                 <Linkedin className="h-5 w-5" />
                             </Link>
-                            <Link href="https://x.com/_this_is_ganesh" target="_blank" className="text-text-muted hover:text-white transition-colors">
+                            <Link href="https://x.com/_this_is_ganesh" target="_blank" className="inline-flex items-center justify-center p-2.5 text-text-muted hover:text-white transition-colors">
                                 <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24">
                                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                                 </svg>
@@ -32,29 +32,29 @@ export function Footer() {
                     <div className="space-y-4">
                         <h4 className="text-xs font-bold uppercase tracking-widest text-text-primary">Engineering</h4>
                         <ul className="space-y-3 text-sm text-text-muted">
-                            <li><Link href="/projects" className="hover:text-primary transition-colors">Projects & Systems</Link></li>
-                            <li><Link href="/notes" className="hover:text-primary transition-colors">System Design Notes</Link></li>
-                            <li><Link href="/blog" className="hover:text-primary transition-colors">Engineering Blog</Link></li>
-                            <li><Link href="/build-log" className="hover:text-primary transition-colors">Build Log</Link></li>
+                            <li><Link href="/projects" className="inline-block py-2 hover:text-primary transition-colors">Projects & Systems</Link></li>
+                            <li><Link href="/notes" className="inline-block py-2 hover:text-primary transition-colors">System Design Notes</Link></li>
+                            <li><Link href="/blog" className="inline-block py-2 hover:text-primary transition-colors">Engineering Blog</Link></li>
+                            <li><Link href="/build-log" className="inline-block py-2 hover:text-primary transition-colors">Build Log</Link></li>
                         </ul>
                     </div>
 
                     <div className="space-y-4">
                         <h4 className="text-xs font-bold uppercase tracking-widest text-text-primary">Security</h4>
                         <ul className="space-y-3 text-sm text-text-muted">
-                            <li><Link href="/security-research" className="hover:text-primary transition-colors">Vulnerability Research</Link></li>
-                            <li><Link href="https://hackerone.com/pganeshkrishnareddy" target="_blank" className="hover:text-[#ff6600] transition-colors">HackerOne</Link></li>
-                            <li><Link href="https://yeswehack.com/hunters/pganeshkrishnareddy" target="_blank" className="hover:text-[#e91e63] transition-colors">YesWeHack</Link></li>
-                            <li><Link href="/about" className="hover:text-primary transition-colors">Philosophy</Link></li>
+                            <li><Link href="/security-research" className="inline-block py-2 hover:text-primary transition-colors">Vulnerability Research</Link></li>
+                            <li><Link href="https://hackerone.com/pganeshkrishnareddy" target="_blank" className="inline-block py-2 hover:text-[#ff6600] transition-colors">HackerOne</Link></li>
+                            <li><Link href="https://yeswehack.com/hunters/pganeshkrishnareddy" target="_blank" className="inline-block py-2 hover:text-[#e91e63] transition-colors">YesWeHack</Link></li>
+                            <li><Link href="/about" className="inline-block py-2 hover:text-primary transition-colors">Philosophy</Link></li>
                         </ul>
                     </div>
 
                     <div className="space-y-4">
                         <h4 className="text-xs font-bold uppercase tracking-widest text-text-primary">Connect</h4>
                         <ul className="space-y-3 text-sm text-text-muted">
-                            <li><Link href="/contact" className="hover:text-primary transition-colors">Contact Me</Link></li>
-                            <li><a href="mailto:pganeshkrishnareddy@gmail.com" className="hover:text-primary transition-colors">Email</a></li>
-                            <li><a href="/P_Ganesh_Krishna_Reddy_Resume.pdf" download className="hover:text-primary transition-colors">Download Resume</a></li>
+                            <li><Link href="/contact" className="inline-block py-2 hover:text-primary transition-colors">Contact Me</Link></li>
+                            <li><a href="mailto:pganeshkrishnareddy@gmail.com" className="inline-block py-2 hover:text-primary transition-colors">Email</a></li>
+                            <li><a href="/P_Ganesh_Krishna_Reddy_Resume.pdf" download className="inline-block py-2 hover:text-primary transition-colors">Download Resume</a></li>
                         </ul>
                     </div>
                 </div>
