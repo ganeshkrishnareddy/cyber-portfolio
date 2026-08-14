@@ -24,7 +24,7 @@ export function AboutContent() {
                 >
                     <h1 className="text-4xl md:text-5xl font-bold text-text-primary">About Me</h1>
                     <div className="space-y-4 text-xl text-text-muted leading-relaxed">
-                        <p>I didn't start in cybersecurity. I started building products.</p>
+                        <p>I didn&apos;t start in cybersecurity. I started building products.</p>
                         <p>While delivering production software, I realized most applications fail because security is treated as an afterthought.</p>
                         <p className="text-text-primary font-semibold border-l-4 border-primary pl-4">
                             Today, I design software where security is part of the architecture—not something added later.
@@ -72,14 +72,14 @@ export function AboutContent() {
                         <div className="text-primary font-mono text-sm font-bold">01</div>
                         <h3 className="font-bold text-text-primary text-xl flex items-center gap-2">Shift Left is Dead.<br/>Build Secure by Default.</h3>
                         <p className="text-text-muted leading-relaxed">
-                            I don't believe security should happen after deployment. Or even in the CI pipeline. Security is an architectural property. Every pull request, every system design document, every database schema should explicitly improve the security posture.
+                            I don&apos;t believe security should happen after deployment. Or even in the CI pipeline. Security is an architectural property. Every pull request, every system design document, every database schema should explicitly improve the security posture.
                         </p>
                     </div>
                     <div className="space-y-2">
                         <div className="text-primary font-mono text-sm font-bold">02</div>
                         <h3 className="font-bold text-text-primary text-xl flex items-center gap-2">Complexity is the Enemy<br/>of Security.</h3>
                         <p className="text-text-muted leading-relaxed">
-                            Hackers don't exploit encryption algorithms; they exploit complex state machines, dangling pointers, and misconfigured YAML files. I optimize for radical simplicity. If a junior engineer can't hold the architecture in their head, it's not secure.
+                            Hackers don&apos;t exploit encryption algorithms; they exploit complex state machines, dangling pointers, and misconfigured YAML files. I optimize for radical simplicity. If a junior engineer can&apos;t hold the architecture in their head, it&apos;s not secure.
                         </p>
                     </div>
                     <div className="space-y-2">
@@ -93,7 +93,7 @@ export function AboutContent() {
                         <div className="text-primary font-mono text-sm font-bold">04</div>
                         <h3 className="font-bold text-text-primary text-xl flex items-center gap-2">What I Refuse to Build.</h3>
                         <p className="text-text-muted leading-relaxed">
-                            I refuse to build systems that prioritize feature velocity over user data privacy. I don't compromise on JWT handling, I don't accept "we'll add auth later," and I never log PII.
+                            I refuse to build systems that prioritize feature velocity over user data privacy. I don&apos;t compromise on JWT handling, I don&apos;t accept &ldquo;we&apos;ll add auth later,&rdquo; and I never log PII.
                         </p>
                     </div>
                 </div>

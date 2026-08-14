@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { clsx } from 'clsx';
 import {
     Code,
@@ -53,7 +53,7 @@ const getIcon = (name: string): LucideIcon => {
 };
 
 export function SkillBadge({ name, level, className, icon: ManualIcon }: SkillBadgeProps) {
-    const Icon = useMemo(() => ManualIcon || getIcon(name), [ManualIcon, name]);
+    const Icon = ManualIcon || getIcon(name);
 
     return (
         <div
@@ -63,7 +63,7 @@ export function SkillBadge({ name, level, className, icon: ManualIcon }: SkillBa
                 className
             )}
         >
-            <Icon className="w-3.5 h-3.5 mr-2 opacity-70 group-hover:opacity-100 transition-opacity" />
+            {React.createElement(Icon, { className: 'w-3.5 h-3.5 mr-2 opacity-70 group-hover:opacity-100 transition-opacity' })}
             <span>{name}</span>
             {level && (
                 <span className="ml-2 pl-2 border-l border-current/20 opacity-60 text-[10px] uppercase tracking-wider">

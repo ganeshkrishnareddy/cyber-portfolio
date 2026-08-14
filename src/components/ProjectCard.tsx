@@ -54,7 +54,7 @@ export function ProjectCard({
                         </h3>
                         <div className="flex gap-2 items-center">
                             {slug && (
-                                <Link href={`/projects/${slug}`} className="text-xs font-bold uppercase tracking-widest text-primary hover:text-primary/80 transition-colors mr-2">
+                                <Link href={`/projects/${slug}`} className="inline-block py-1.5 text-xs font-bold uppercase tracking-widest text-primary hover:text-primary/80 transition-colors mr-2">
                                     Case Study →
                                 </Link>
                             )}

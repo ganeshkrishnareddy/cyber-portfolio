@@ -128,7 +128,7 @@ export function SecurityResearchContent() {
                     <p className="text-xs text-text-muted leading-relaxed">
                         Awarded Jul 29, 2026 (Report #3851049, CLEAR program); payout confirmed via PayPal Jul 30, 2026.
                         Earning the <span className="text-primary">Bounty Hunter</span> badge &mdash; my first paid bounty.
-                        Verify on <a className="text-primary underline" href="https://hackerone.com/pganeshkrishnareddy" target="_blank" rel="noopener">hackerone.com/pganeshkrishnareddy</a>.
+                        Verify on <a className="inline-block py-1 text-primary underline" href="https://hackerone.com/pganeshkrishnareddy" target="_blank" rel="noopener">hackerone.com/pganeshkrishnareddy</a>.
                     </p>
                 </div>
                 <div className="rounded-xl border border-surface bg-surface/30 p-6 space-y-2">

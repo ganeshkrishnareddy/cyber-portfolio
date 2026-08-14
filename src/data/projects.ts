@@ -1,4 +1,27 @@
-export const projectsData = [
+export interface Project {
+    slug: string;
+    title: string;
+    shortDescription: string;
+    methodology: string;
+    outcome: string;
+    overview: string;
+    problem: string;
+    requirements: string;
+    architecture: string;
+    database: string;
+    apiDesign: string;
+    securityDecisions: string;
+    tradeoffs: string;
+    performance: string;
+    deployment: string;
+    lessonsLearned: string;
+    futureImprovements: string;
+    tags: string[];
+    githubUrl?: string;
+    liveUrl?: string;
+}
+
+export const projectsData: Project[] = [
     {
         slug: "flowmatch",
         title: "FlowMatch",

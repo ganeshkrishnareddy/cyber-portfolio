@@ -5,7 +5,9 @@ import { Github, ArrowLeft, Terminal as TerminalIcon, Database, Server, Shield, 
 import Link from 'next/link';
 import Mermaid from '@/components/Mermaid';
 
-export function ProjectCaseStudyContent({ project }: { project: any }) {
+import { Project } from '@/data/projects';
+
+export function ProjectCaseStudyContent({ project }: { project: Project }) {
     return (
         <div className="container max-w-5xl mx-auto px-4 py-12 space-y-12">
             <Link href="/projects" className="inline-flex items-center gap-2 text-sm font-medium text-text-muted hover:text-primary transition-colors">

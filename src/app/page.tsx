@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useSyncExternalStore } from 'react';
 import { motion } from 'framer-motion';
 import { ParticleBackground } from '@/components/3d/ParticleBackground';
 import { ArrowRight, Shield, Terminal as TerminalIcon, ShieldCheck, Lock, Globe, Zap, Trophy, Download } from 'lucide-react';
@@ -53,11 +53,13 @@ const HackerEarthIcon = () => (
 );
 
 export default function Home() {
-  const [calendarMounted, setCalendarMounted] = useState(false);
-
-  useEffect(() => {
-    setCalendarMounted(true);
-  }, []);
+  // SSR-safe mounted gate: false on the server, true after hydration (avoids the
+  // react-github-calendar SSR/client mismatch while keeping the gate rule-compliant).
+  const calendarMounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
 
   return (
     <div className="flex flex-col gap-12 md:gap-20 pb-12 md:pb-20 pt-28 md:pt-32">

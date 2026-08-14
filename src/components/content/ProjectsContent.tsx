@@ -26,7 +26,7 @@ export function ProjectsContent() {
             <div className="grid md:grid-cols-2 gap-8">
                 {projects.map((project, index) => (
                     <ProjectCard3D key={project.title} delay={index * 0.1}>
-                        <ProjectCard {...project as any} description={project.shortDescription} />
+                        <ProjectCard {...project} description={project.shortDescription} />
                     </ProjectCard3D>
                 ))}
             </div>

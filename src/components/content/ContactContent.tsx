@@ -58,7 +58,7 @@ export function ContactContent() {
                     <div>
                         <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-6 tracking-tight">Need someone who thinks about engineering before code?</h1>
                         <p className="text-xl text-text-muted leading-relaxed">
-                            Let's talk.
+                            Let&apos;s talk.
                         </p>
                     </div>
 
@@ -69,7 +69,7 @@ export function ContactContent() {
                             </div>
                             <div className="min-w-0">
                                 <div className="text-sm text-text-muted">Email</div>
-                                <a href="mailto:pganeshkrishnareddy@gmail.com" className="text-lg font-bold text-text-primary hover:text-primary transition-colors break-all">pganeshkrishnareddy@gmail.com</a>
+                                <a href="mailto:pganeshkrishnareddy@gmail.com" className="inline-block py-1 text-lg font-bold text-text-primary hover:text-primary transition-colors break-all">pganeshkrishnareddy@gmail.com</a>
                             </div>
                         </div>
 
@@ -195,7 +195,7 @@ export function ContactContent() {
                             </Button>
 
                             <p className="text-center text-xs text-text-muted">
-                                Prefer direct email? <a href="mailto:pganeshkrishnareddy@gmail.com" className="text-primary hover:underline">pganeshkrishnareddy@gmail.com</a>
+                                Prefer direct email? <a href="mailto:pganeshkrishnareddy@gmail.com" className="inline-block py-1 text-primary hover:underline">pganeshkrishnareddy@gmail.com</a>
                             </p>
                         </div>
                     </form>
