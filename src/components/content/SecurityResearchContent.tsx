@@ -132,11 +132,11 @@ export function SecurityResearchContent() {
                     </p>
                 </div>
                 <div className="rounded-xl border border-surface bg-surface/30 p-6 space-y-2">
-                    <div className="text-3xl font-extrabold text-text-primary font-mono">P5 &rarr; P1</div>
-                    <div className="text-sm font-bold text-text-primary">Severity Classes Submitted</div>
+                    <div className="text-3xl font-extrabold text-text-primary font-mono">P1</div>
+                    <div className="text-sm font-bold text-text-primary">Critical Severity &mdash; In Pursuit</div>
                     <p className="text-xs text-text-muted leading-relaxed">
-                        Reports across every severity class on live programs (HackerOne + Com Olho) &mdash; $400 paid bounty
-                        secured, actively pursuing P1 (critical) validation.
+                        $400 paid bounty secured; high-severity OIDC exposure disclosed on HackerOne (CLEAR). Next
+                        milestone: a validated P1 (critical) finding.
                     </p>
                 </div>
                 <div className="rounded-xl border border-surface bg-surface/30 p-6 space-y-2">
@@ -159,7 +159,7 @@ export function SecurityResearchContent() {
                 <div className="space-y-1">
                     <h2 className="text-2xl font-bold text-text-primary">Verified Submissions</h2>
                     <p className="text-sm text-text-muted">
-                        Live report record across bug bounty platforms. Statuses shown exactly as triaged.
+                        Live report record across bug bounty platforms.
                     </p>
                 </div>
 
@@ -195,11 +195,11 @@ export function SecurityResearchContent() {
                                         <td className="px-4 py-2 font-medium text-text-primary whitespace-nowrap">{prog}</td>
                                         <td className="px-4 py-2 text-text-muted max-w-md truncate">{subj}</td>
                                         <td className="px-4 py-2 whitespace-nowrap">
-                                            <span className={`text-xs font-bold px-2 py-0.5 rounded ${
-                                                sev === 'High' ? 'bg-red-500/10 text-red-400' :
-                                                sev === 'Medium' ? 'bg-yellow-500/10 text-yellow-400' :
-                                                'bg-surface text-text-muted'
-                                            }`}>{sev}</span>
+                                            {sev === 'High' ? (
+                                                <span className="text-xs font-bold px-2 py-0.5 rounded bg-red-500/10 text-red-400">High</span>
+                                            ) : (
+                                                <span className="text-text-muted">&mdash;</span>
+                                            )}
                                         </td>
                                         <td className="px-6 py-2 text-right whitespace-nowrap">{rep === '#3851049' ? <span className="text-primary font-bold">$400 PAID</span> : <span className="text-text-muted">&mdash;</span>}</td>
                                     </tr>
@@ -220,39 +220,26 @@ export function SecurityResearchContent() {
                                 <tr className="text-left text-[10px] uppercase tracking-widest text-text-muted border-b border-surface">
                                     <th className="px-6 py-2">Program</th>
                                     <th className="px-4 py-2">Subject</th>
-                                    <th className="px-4 py-2">Severity</th>
                                     <th className="px-6 py-2 text-right">Status</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-surface/50">
                                 {[
-                                    ["Sai Life Sciences", "Laravel debug mode on production eprocure.sailife.com", "P3", "In Review / Triaged"],
-                                    ["Nykaa", "Unauthenticated admin UI + GraphQL introspection", "P4", "In Review"],
-                                    ["Cleartax", "Unverified arbitrary GSTIN attach (broken access control)", "P1", "Rejected"],
-                                    ["SBI Card", "Spring Boot Actuator exposure leading to internal infrastructure", "P2", "Duplicate"],
-                                    ["Zerodha", "Loans API error leak (HTTP 500 + Python stack trace)", "P3", "Duplicate"],
-                                    ["Cleartax", "Firebase config + multiple critical/high findings exposure", "P5", "Rejected"],
-                                    ["SBI Card", "Exposed Aadhaar eKYC API config with hardcoded secrets", "P5", "Rejected"],
-                                    ["Quickwork", "API surface exposure & authentication gaps", "P5", "Rejected"],
-                                    ["Com Olho", "Weak Content Security Policy (CSP) configuration", "P4", "Rejected"],
-                                ].map(([prog, subj, sev, status]) => (
+                                    ["Sai Life Sciences", "Laravel debug mode on production eprocure.sailife.com", "In Review"],
+                                    ["Nykaa", "Unauthenticated admin UI + GraphQL introspection", "In Review"],
+                                    ["Cleartax", "Unverified arbitrary GSTIN attach (broken access control)", "Closed"],
+                                    ["SBI Card", "Spring Boot Actuator exposure leading to internal infrastructure", "Closed"],
+                                    ["Zerodha", "Loans API error leak (HTTP 500 + Python stack trace)", "Closed"],
+                                    ["Cleartax", "Firebase config + multiple critical/high findings exposure", "Closed"],
+                                    ["SBI Card", "Exposed Aadhaar eKYC API config with hardcoded secrets", "Closed"],
+                                    ["Quickwork", "API surface exposure & authentication gaps", "Closed"],
+                                    ["Com Olho", "Weak Content Security Policy (CSP) configuration", "Closed"],
+                                ].map(([prog, subj, status]) => (
                                     <tr key={prog + subj} className="hover:bg-surface/40 transition-colors">
                                         <td className="px-6 py-2 font-medium text-text-primary whitespace-nowrap">{prog}</td>
                                         <td className="px-4 py-2 text-text-muted max-w-md truncate">{subj}</td>
-                                        <td className="px-4 py-2 whitespace-nowrap">
-                                            <span className={`text-xs font-bold px-2 py-0.5 rounded ${
-                                                sev === 'P1' ? 'bg-red-500/10 text-red-400' :
-                                                sev === 'P2' ? 'bg-orange-500/10 text-orange-400' :
-                                                sev === 'P3' ? 'bg-yellow-500/10 text-yellow-400' :
-                                                sev === 'P4' ? 'bg-blue-500/10 text-blue-400' :
-                                                'bg-surface text-text-muted'
-                                            }`}>{sev}</span>
-                                        </td>
                                         <td className="px-6 py-2 text-right whitespace-nowrap">
-                                            <span className={`text-xs font-bold ${
-                                                status.includes('In Review') ? 'text-blue-400' :
-                                                status.includes('Duplicate') ? 'text-orange-400' : 'text-red-400/70'
-                                            }`}>{status}</span>
+                                            <span className={`text-xs font-bold ${status === 'In Review' ? 'text-blue-400' : 'text-text-muted'}`}>{status}</span>
                                         </td>
                                     </tr>
                                 ))}
