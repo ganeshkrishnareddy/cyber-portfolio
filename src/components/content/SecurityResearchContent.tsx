@@ -115,6 +115,153 @@ export function SecurityResearchContent() {
                 </div>
             </motion.div>
 
+            {/* Bug Bounty Highlights */}
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.15 }}
+                className="grid sm:grid-cols-3 gap-4"
+            >
+                <div className="rounded-xl border border-primary/30 bg-primary/5 p-6 space-y-2">
+                    <div className="text-3xl font-extrabold text-primary font-mono">$400</div>
+                    <div className="text-sm font-bold text-text-primary">USD HackerOne Bug Bounty &mdash; Paid</div>
+                    <p className="text-xs text-text-muted leading-relaxed">
+                        Awarded Jul 29, 2026 (Report #3851049, CLEAR program); payout confirmed via PayPal Jul 30, 2026.
+                        Earning the <span className="text-primary">Bounty Hunter</span> badge &mdash; my first paid bounty.
+                        Verify on <a className="text-primary underline" href="https://hackerone.com/pganeshkrishnareddy" target="_blank" rel="noopener">hackerone.com/pganeshkrishnareddy</a>.
+                    </p>
+                </div>
+                <div className="rounded-xl border border-surface bg-surface/30 p-6 space-y-2">
+                    <div className="text-3xl font-extrabold text-text-primary font-mono">P5 &rarr; P1</div>
+                    <div className="text-sm font-bold text-text-primary">Severity Classes Submitted</div>
+                    <p className="text-xs text-text-muted leading-relaxed">
+                        Reports across every severity class on live programs (HackerOne + Com Olho) &mdash; $400 paid bounty
+                        secured, actively pursuing P1 (critical) validation.
+                    </p>
+                </div>
+                <div className="rounded-xl border border-surface bg-surface/30 p-6 space-y-2">
+                    <div className="text-3xl font-extrabold text-text-primary font-mono">18+</div>
+                    <div className="text-sm font-bold text-text-primary">Reports Submitted</div>
+                    <p className="text-xs text-text-muted leading-relaxed">
+                        8 on HackerOne (Plaid, CLEAR, Stripchat, 1win) and 10 on Com Olho &mdash; plus 7 professional certifications
+                        (CompTIA Security+, CySA+, PenTest+, Network+, QuickHeal &times;2, CS50).
+                    </p>
+                </div>
+            </motion.div>
+
+            {/* Verified Submissions */}
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="space-y-6"
+            >
+                <div className="space-y-1">
+                    <h2 className="text-2xl font-bold text-text-primary">Verified Submissions</h2>
+                    <p className="text-sm text-text-muted">
+                        Live report record across bug bounty platforms. Statuses shown exactly as triaged.
+                    </p>
+                </div>
+
+                <div className="rounded-xl border border-surface bg-surface/30 overflow-hidden">
+                    <div className="px-6 py-3 border-b border-surface flex items-center justify-between">
+                        <h3 className="font-bold text-text-primary">HackerOne &mdash; 8 reports</h3>
+                        <span className="text-xs font-mono text-primary border border-primary/30 bg-primary/5 px-2 py-0.5 rounded">1 bounty paid: $400</span>
+                    </div>
+                    <div className="overflow-x-auto">
+                        <table className="w-full text-sm">
+                            <thead>
+                                <tr className="text-left text-[10px] uppercase tracking-widest text-text-muted border-b border-surface">
+                                    <th className="px-6 py-2">Report</th>
+                                    <th className="px-4 py-2">Program</th>
+                                    <th className="px-4 py-2">Subject</th>
+                                    <th className="px-4 py-2">Severity</th>
+                                    <th className="px-6 py-2 text-right">Reward</th>
+                                </tr>
+                            </thead>
+                            <tbody className="divide-y divide-surface/50">
+                                {[
+                                    ["#3900831", "Plaid", "Subdomain takeover on verify-testing.plaid.com", "Low"],
+                                    ["#3905298", "Plaid", "Server-side reCAPTCHA validation bypass on account signup", "Low"],
+                                    ["#3900681", "CLEAR", "OAuth/OIDC infra exposure + unauth admin API surface", "None"],
+                                    ["#3851077", "CLEAR", "Salesforce sandbox exposes OIDC discovery + token exchange", "High"],
+                                    ["#3851049", "CLEAR", "Unauthenticated data injection in FormAssembly form allows database poisoning", "Low"],
+                                    ["#3851068", "CLEAR", "postMessage wildcard origin + missing X-Frame-Options (clickjacking chain)", "Low"],
+                                    ["#39793920", "Stripchat", "CNAME chain exposes internal AWS VPC via public DNS", "Medium"],
+                                    ["#3792633", "1win", "Unauthenticated API endpoints exposing configuration data", "Low"],
+                                ].map(([rep, prog, subj, sev]) => (
+                                    <tr key={rep} className="hover:bg-surface/40 transition-colors">
+                                        <td className="px-6 py-2 font-mono text-primary whitespace-nowrap">{rep}</td>
+                                        <td className="px-4 py-2 font-medium text-text-primary whitespace-nowrap">{prog}</td>
+                                        <td className="px-4 py-2 text-text-muted max-w-md truncate">{subj}</td>
+                                        <td className="px-4 py-2 whitespace-nowrap">
+                                            <span className={`text-xs font-bold px-2 py-0.5 rounded ${
+                                                sev === 'High' ? 'bg-red-500/10 text-red-400' :
+                                                sev === 'Medium' ? 'bg-yellow-500/10 text-yellow-400' :
+                                                'bg-surface text-text-muted'
+                                            }`}>{sev}</span>
+                                        </td>
+                                        <td className="px-6 py-2 text-right whitespace-nowrap">{rep === '#3851049' ? <span className="text-primary font-bold">$400 PAID</span> : <span className="text-text-muted">&mdash;</span>}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div className="rounded-xl border border-surface bg-surface/30 overflow-hidden">
+                    <div className="px-6 py-3 border-b border-surface flex items-center justify-between">
+                        <h3 className="font-bold text-text-primary">Com Olho &mdash; 10 submissions</h3>
+                        <span className="text-xs font-mono text-text-muted border border-surface px-2 py-0.5 rounded">2 in review</span>
+                    </div>
+                    <div className="overflow-x-auto">
+                        <table className="w-full text-sm">
+                            <thead>
+                                <tr className="text-left text-[10px] uppercase tracking-widest text-text-muted border-b border-surface">
+                                    <th className="px-6 py-2">Program</th>
+                                    <th className="px-4 py-2">Subject</th>
+                                    <th className="px-4 py-2">Severity</th>
+                                    <th className="px-6 py-2 text-right">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody className="divide-y divide-surface/50">
+                                {[
+                                    ["Sai Life Sciences", "Laravel debug mode on production eprocure.sailife.com", "P3", "In Review / Triaged"],
+                                    ["Nykaa", "Unauthenticated admin UI + GraphQL introspection", "P4", "In Review"],
+                                    ["Cleartax", "Unverified arbitrary GSTIN attach (broken access control)", "P1", "Rejected"],
+                                    ["SBI Card", "Spring Boot Actuator exposure leading to internal infrastructure", "P2", "Duplicate"],
+                                    ["Zerodha", "Loans API error leak (HTTP 500 + Python stack trace)", "P3", "Duplicate"],
+                                    ["Cleartax", "Firebase config + multiple critical/high findings exposure", "P5", "Rejected"],
+                                    ["SBI Card", "Exposed Aadhaar eKYC API config with hardcoded secrets", "P5", "Rejected"],
+                                    ["Quickwork", "API surface exposure & authentication gaps", "P5", "Rejected"],
+                                    ["Com Olho", "Weak Content Security Policy (CSP) configuration", "P4", "Rejected"],
+                                ].map(([prog, subj, sev, status]) => (
+                                    <tr key={prog + subj} className="hover:bg-surface/40 transition-colors">
+                                        <td className="px-6 py-2 font-medium text-text-primary whitespace-nowrap">{prog}</td>
+                                        <td className="px-4 py-2 text-text-muted max-w-md truncate">{subj}</td>
+                                        <td className="px-4 py-2 whitespace-nowrap">
+                                            <span className={`text-xs font-bold px-2 py-0.5 rounded ${
+                                                sev === 'P1' ? 'bg-red-500/10 text-red-400' :
+                                                sev === 'P2' ? 'bg-orange-500/10 text-orange-400' :
+                                                sev === 'P3' ? 'bg-yellow-500/10 text-yellow-400' :
+                                                sev === 'P4' ? 'bg-blue-500/10 text-blue-400' :
+                                                'bg-surface text-text-muted'
+                                            }`}>{sev}</span>
+                                        </td>
+                                        <td className="px-6 py-2 text-right whitespace-nowrap">
+                                            <span className={`text-xs font-bold ${
+                                                status.includes('In Review') ? 'text-blue-400' :
+                                                status.includes('Duplicate') ? 'text-orange-400' : 'text-red-400/70'
+                                            }`}>{status}</span>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </motion.div>
+
             <div className="relative border-l border-surface ml-4 md:ml-6 space-y-12">
                 {findings
                     .sort((a, b) => new Date(b.timeline).getTime() - new Date(a.timeline).getTime())

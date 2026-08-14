@@ -295,7 +295,7 @@ export default function Home() {
             <span className="hidden md:inline text-surface-hover">•</span>
             <span className="flex items-center gap-2 hover:text-primary transition-colors"><Globe className="w-4 h-4" /> 10+ Production Systems</span>
             <span className="hidden md:inline text-surface-hover">•</span>
-            <span className="flex items-center gap-2 hover:text-primary transition-colors"><Shield className="w-4 h-4" /> Bug Bounty Research</span>
+            <span className="flex items-center gap-2 hover:text-primary transition-colors"><Shield className="w-4 h-4" /> $400 HackerOne Bounty</span>
           </div>
         </div>
       </section>

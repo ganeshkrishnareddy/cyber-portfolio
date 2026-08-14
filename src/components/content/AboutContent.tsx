@@ -214,6 +214,13 @@ export function AboutContent() {
                             </div>
                             <span className="text-xs font-mono text-text-muted border border-surface px-2 py-1 rounded">Jan 2025</span>
                         </li>
+                        <li className="flex items-start justify-between group">
+                            <div>
+                                <h3 className="font-bold text-text-primary group-hover:text-primary transition-colors">CS50: Introduction to Computer Science</h3>
+                                <div className="text-sm text-text-muted">Harvard University</div>
+                            </div>
+                            <span className="text-xs font-mono text-text-muted border border-surface px-2 py-1 rounded">2024</span>
+                        </li>
                     </ul>
                 </section>
             </div>
@@ -231,10 +238,12 @@ export function AboutContent() {
                             Awarded the prestigious scholarship worth <b>Rs. 2,00,000</b> for academic excellence in engineering.
                         </p>
                     </div>
-                    <div className="bg-surface/30 p-6 rounded-lg border border-surface hover:border-surface-hover transition-colors space-y-2">
-                        <div className="text-lg font-bold text-primary">Bug Bounty Programs</div>
+                    <div className="bg-surface/30 p-6 rounded-lg border border-primary/30 hover:border-primary/60 transition-colors space-y-2">
+                        <div className="text-lg font-bold text-primary">$400 USD HackerOne Bug Bounty &mdash; Paid</div>
                         <p className="text-text-muted text-sm leading-relaxed">
-                            Participated in bug bounty programs, identifying and responsibly disclosing vulnerabilities in web applications.
+                            Awarded <b>$400 USD</b> (Report #3851049, CLEAR program, Jul 2026) with a <b>confirmed PayPal
+                            payout</b> and the HackerOne <b>Bounty Hunter</b> badge. Active bug bounty hunter with findings
+                            spanning <b>P4 &rarr; P2</b> severity classes &mdash; currently pursuing <b>P1 (critical)</b>.
                         </p>
                     </div>
                     <div className="bg-surface/30 p-6 rounded-lg border border-surface hover:border-surface-hover transition-colors space-y-2">

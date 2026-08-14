@@ -146,5 +146,42 @@ Java.perform(function () {
             </ul>
             <p>Security is a spectrum, not a binary state. By adopting a pragmatic approach, startups can protect themselves from 99% of automated attacks while maintaining the velocity needed to succeed.</p>
         `
+    },
+    {
+        slug: "first-hackerone-bounty-p4-to-p1",
+        title: "From P4 to P1: How I Earned My First Paid HackerOne Bounty",
+        date: "2026-08-10",
+        readTime: "9 min read",
+        summary: "My first $400 USD bug bounty on HackerOne (Report #3851049, CLEAR program, paid Jul 30 2026): the recon workflow, the severity ladder from P4 to P1, responsible disclosure, and the lessons that turned bounty hunting into a repeatable process.",
+        tags: ["Bug Bounty", "HackerOne", "Vulnerability Research", "Web Security"],
+        content: `
+            <h2>Validated, Not Just Lab Practice</h2>
+            <p>Most aspiring security professionals train in labs. Labs are safe, deterministic, and quiet. Real programs are messy: hidden endpoints, legacy code paths, rate limits, and vendors who triage slowly. This is the story of my first <strong>$400 USD paid bounty on HackerOne</strong> - <strong>Report #3851049, awarded Jul 29, 2026 on the CLEAR program and paid via PayPal on Jul 30, 2026</strong>, earning the <strong>Bounty Hunter</strong> badge. It is verifiable on <a href="https://hackerone.com/pganeshkrishnareddy" target="_blank" rel="noopener">my public HackerOne profile</a>.</p>
+
+            <h2>The Severity Ladder: P4 to P1</h2>
+            <p>On HackerOne's severity model, findings are triaged from <strong>P4 (informational/low)</strong> up to <strong>P1 (critical)</strong>. My early submissions were honest but small - P4s and P3s that showed I understood the surface area but hadn't yet found the deep bugs. The breakthrough came from treating every low-severity finding as reconnaissance for the next one:</p>
+            <ul>
+                <li><strong>P4 &rarr; P3:</strong> Configuration and exposure findings (missing headers, verbose errors) that map the attack surface.</li>
+                <li><strong>P3 &rarr; P2:</strong> Real, exploitable flaws - broken access control, IDOR, stored input issues - with clear business impact.</li>
+                <li><strong>P2 &rarr; P1 (in progress):</strong> Chaining smaller findings into account takeover or remote code execution paths.</li>
+            </ul>
+
+            <h2>The Winning Workflow</h2>
+            <p>The paid finding came from a disciplined recon loop that I now apply to every program:</p>
+            <ol>
+                <li><strong>Enumerate the surface:</strong> subdomain discovery, JS bundle analysis, and API route mapping with Burp Suite and custom scripts.</li>
+                <li><strong>Focus on state-changing flows:</strong> registration, password reset, email verification, and multi-tenant object access - where authorization bugs hide.</li>
+                <li><strong>Test the business logic, not just the OWASP Top 10:</strong> parameter tampering, race conditions, and cross-tenant data access.</li>
+                <li><strong>Write a triage-ready report:</strong> reproduction steps, impact assessment, CVSS scoring, and remediation guidance. A vendor-friendly report gets triaged and paid faster.</li>
+            </ol>
+
+            <h2>What the Payout Changed</h2>
+            <p>The $400 is meaningful, but the <em>payment</em> mattered more: the program reviewed the report, awarded a bounty, and HackerOne paid it out - no dispute, no follow-up chase. That single event turned "bug bounty participant" into a researcher with a <strong>confirmed payout on record</strong> - the difference between listing an activity on a resume and proving it with a paid report reference.</p>
+
+            <h2>Responsible Disclosure, Always</h2>
+            <p>Every finding on this site was reported through the vendor's coordinated disclosure channel. I never test beyond scope, never access data I don't need, and never publish details before a fix ships. The goal is to make software safer - and a track record of clean, ethical disclosure is worth more than any bounty amount.</p>
+
+            <p><em>Next target: a P1 critical finding. The ladder only goes up.</em></p>
+        `
     }
 ];

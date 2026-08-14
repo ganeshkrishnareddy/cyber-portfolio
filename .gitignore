@@ -42,3 +42,9 @@ next-env.d.ts
 
 # Local Netlify folder
 .netlify
+
+# debug/lint artifacts (never commit)
+build_output.txt
+debug_*.js
+lint_*.txt
+lint_results*.json
