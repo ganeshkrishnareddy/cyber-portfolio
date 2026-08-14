@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ParticleBackground } from '@/components/3d/ParticleBackground';
-import { ArrowRight, Shield, Terminal as TerminalIcon, ShieldCheck, Lock, Globe, Zap, Trophy } from 'lucide-react';
+import { ArrowRight, Shield, Terminal as TerminalIcon, ShieldCheck, Lock, Globe, Zap, Trophy, Download } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/Button';
 import { ProjectCard } from '@/components/ProjectCard';
@@ -261,6 +261,12 @@ export default function Home() {
                   <a href="https://hackerone.com/pganeshkrishnareddy" target="_blank" rel="noopener">
                     <Button variant="outline" className="gap-2">
                       Verify on HackerOne
+                    </Button>
+                  </a>
+                  <a href="/P_Ganesh_Bug_Bounty_Verification.pdf" download>
+                    <Button variant="outline" className="gap-2">
+                      Verification Letter
+                      <Download className="w-4 h-4" />
                     </Button>
                   </a>
                 </div>
