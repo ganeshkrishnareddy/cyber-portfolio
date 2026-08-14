@@ -1,7 +1,9 @@
+import type { Metadata } from 'next';
 import { notesData } from '@/data/notes';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, Clock } from 'lucide-react';
+import { pageMetadata, SITE_URL, SITE_NAME } from '@/lib/seo';
 
 export function generateStaticParams() {
     return notesData.map((note) => ({
@@ -9,15 +11,48 @@ export function generateStaticParams() {
     }));
 }
 
-export default function NotePost({ params }: { params: { slug: string } }) {
-    const note = notesData.find((n) => n.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const { slug } = await params;
+    const note = notesData.find((n) => n.slug === slug);
+    if (!note) return {};
+    return pageMetadata({
+        title: note.title,
+        description: note.summary,
+        path: `/notes/${note.slug}`,
+        type: 'article',
+        keywords: [note.category],
+        publishedTime: note.lastUpdated,
+    });
+}
+
+export default async function NotePost({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
+    const note = notesData.find((n) => n.slug === slug);
 
     if (!note) {
         notFound();
     }
 
+    const articleJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: note.title,
+        description: note.summary,
+        datePublished: note.lastUpdated,
+        dateModified: note.lastUpdated,
+        inLanguage: 'en',
+        author: { '@type': 'Person', name: SITE_NAME, url: SITE_URL },
+        publisher: { '@type': 'Person', name: SITE_NAME },
+        url: `${SITE_URL}/notes/${note.slug}`,
+        mainEntityOfPage: `${SITE_URL}/notes/${note.slug}`,
+    };
+
     return (
         <div className="container max-w-3xl mx-auto px-4 py-12 space-y-12">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+            />
             <Link href="/notes" className="inline-flex items-center gap-2 text-text-muted hover:text-primary transition-colors text-sm font-medium">
                 <ArrowLeft className="w-4 h-4" /> Back to Notes
             </Link>

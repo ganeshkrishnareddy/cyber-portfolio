@@ -1,11 +1,15 @@
+import type { Metadata } from 'next';
 import { notesData } from '@/data/notes';
 import Link from 'next/link';
 import { Network } from 'lucide-react';
+import { pageMetadata } from '@/lib/seo';
 
-export const metadata = {
+export const metadata: Metadata = pageMetadata({
     title: 'System Design Notes',
     description: 'Raw documentation and design patterns for distributed systems.',
-};
+    path: '/notes',
+    keywords: ['System Design', 'Distributed Systems', 'Architecture Notes'],
+});
 
 export default function NotesPage() {
     return (

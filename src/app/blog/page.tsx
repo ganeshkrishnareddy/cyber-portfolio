@@ -1,11 +1,15 @@
+import type { Metadata } from 'next';
 import { blogData } from '@/data/blog';
 import Link from 'next/link';
 import { ArrowLeft, BookOpen } from 'lucide-react';
+import { pageMetadata } from '@/lib/seo';
 
-export const metadata = {
+export const metadata: Metadata = pageMetadata({
     title: 'Engineering Blog',
     description: 'Technical deep-dives into application security, system design, and engineering tradeoffs.',
-};
+    path: '/blog',
+    keywords: ['Security Blog', 'Application Security', 'System Design', 'Bug Bounty'],
+});
 
 export default function BlogPage() {
     return (

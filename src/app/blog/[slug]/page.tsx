@@ -1,7 +1,9 @@
+import type { Metadata } from 'next';
 import { blogData } from '@/data/blog';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
+import { pageMetadata, SITE_URL, SITE_NAME } from '@/lib/seo';
 
 export function generateStaticParams() {
     return blogData.map((post) => ({
@@ -9,15 +11,49 @@ export function generateStaticParams() {
     }));
 }
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
-    const post = blogData.find((p) => p.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const { slug } = await params;
+    const post = blogData.find((p) => p.slug === slug);
+    if (!post) return {};
+    return pageMetadata({
+        title: post.title,
+        description: post.summary,
+        path: `/blog/${post.slug}`,
+        type: 'article',
+        keywords: post.tags,
+        publishedTime: post.date,
+    });
+}
+
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
+    const post = blogData.find((p) => p.slug === slug);
 
     if (!post) {
         notFound();
     }
 
+    const blogPostingJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        headline: post.title,
+        description: post.summary,
+        datePublished: post.date,
+        dateModified: post.date,
+        inLanguage: 'en',
+        author: { '@type': 'Person', name: SITE_NAME, url: SITE_URL },
+        publisher: { '@type': 'Person', name: SITE_NAME },
+        url: `${SITE_URL}/blog/${post.slug}`,
+        mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
+        keywords: post.tags.join(', '),
+    };
+
     return (
         <div className="container max-w-3xl mx-auto px-4 py-12 space-y-12">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingJsonLd) }}
+            />
             <Link href="/blog" className="inline-flex items-center gap-2 text-text-muted hover:text-primary transition-colors text-sm font-medium">
                 <ArrowLeft className="w-4 h-4" /> Back to Blog
             </Link>

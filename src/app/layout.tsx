@@ -37,6 +37,7 @@ export const metadata: Metadata = {
     creator: "@_this_is_ganesh",
   },
   robots: { index: true, follow: true },
+  alternates: { canonical: "/" },
 };
 
 import { Navbar } from "@/components/Navbar";
@@ -68,6 +69,21 @@ export default function RootLayout({
                 "https://www.linkedin.com/in/pganeshkrishnareddy",
                 "https://hackerone.com/pganeshkrishnareddy",
               ],
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "P Ganesh Krishna Reddy",
+              url: "https://pganeshkrishnareddy.vercel.app",
+              description:
+                "Cybersecurity & bug bounty researcher, SOC/VAPT analyst and full-stack engineer. $400 USD HackerOne bounty; CompTIA Security+, CySA+, PenTest+, Network+ certified.",
+              inLanguage: "en",
+              publisher: { "@type": "Person", name: "P Ganesh Krishna Reddy" },
             }),
           }}
         />
