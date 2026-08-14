@@ -109,7 +109,7 @@ export function SecurityResearchContent() {
                 <p className="text-xl text-text-muted leading-relaxed">
                     Technical write-ups on critical vulnerabilities (SSRF, Auth Bypasses, Data Leaks) discovered across enterprise platforms and AI infrastructure.
                 </p>
-                <div className="flex items-center gap-2 px-3 py-1 rounded-md bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-mono w-max">
+                <div className="flex items-center gap-2 px-3 py-1 rounded-md bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-mono w-full sm:w-max">
                     <AlertTriangle className="w-4 h-4" />
                     <span>All findings reported via coordinated disclosure.</span>
                 </div>

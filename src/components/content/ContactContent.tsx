@@ -64,12 +64,12 @@ export function ContactContent() {
 
                     <div className="space-y-6">
                         <div className="flex items-center gap-4 p-4 rounded-lg bg-surface/30 border border-surface hover:border-primary/50 transition-colors">
-                            <div className="p-3 bg-primary/10 rounded-full text-primary">
+                            <div className="p-3 bg-primary/10 rounded-full text-primary shrink-0">
                                 <Mail className="w-6 h-6" />
                             </div>
-                            <div>
+                            <div className="min-w-0">
                                 <div className="text-sm text-text-muted">Email</div>
-                                <a href="mailto:pganeshkrishnareddy@gmail.com" className="text-lg font-bold text-text-primary hover:text-primary transition-colors">pganeshkrishnareddy@gmail.com</a>
+                                <a href="mailto:pganeshkrishnareddy@gmail.com" className="text-lg font-bold text-text-primary hover:text-primary transition-colors break-all">pganeshkrishnareddy@gmail.com</a>
                             </div>
                         </div>
 

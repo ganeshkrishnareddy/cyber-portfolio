@@ -48,8 +48,8 @@ export function ProjectCard({
 
                 {/* Header */}
                 <div className="space-y-2">
-                    <div className="flex items-start justify-between">
-                        <h3 className="text-xl font-bold text-text-primary group-hover:text-primary transition-colors">
+                    <div className="flex flex-wrap items-start justify-between gap-x-2 gap-y-1">
+                        <h3 className="text-xl font-bold text-text-primary group-hover:text-primary transition-colors min-w-0 break-words">
                             {slug ? <Link href={`/projects/${slug}`}>{title}</Link> : title}
                         </h3>
                         <div className="flex gap-2 items-center">
