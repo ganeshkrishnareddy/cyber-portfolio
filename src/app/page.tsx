@@ -1,10 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { clsx } from 'clsx';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { ParticleBackground } from '@/components/3d/ParticleBackground';
-import { ArrowRight, Shield, Terminal as TerminalIcon, ShieldCheck, Lock, Globe, Zap } from 'lucide-react';
+import { ArrowRight, Shield, Terminal as TerminalIcon, ShieldCheck, Lock, Globe, Zap, Trophy } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/Button';
 import { ProjectCard } from '@/components/ProjectCard';
@@ -53,37 +52,7 @@ const HackerEarthIcon = () => (
     </svg>
 );
 
-export default function Home() {
-  const [isAuditing, setIsAuditing] = useState(false);
-  const [auditProgress, setAuditProgress] = useState(0);
-  const [showAuditResults, setShowAuditResults] = useState(false);
-
-  const runAudit = () => {
-    setIsAuditing(true);
-    setAuditProgress(0);
-    setShowAuditResults(false);
-  };
-
-  useEffect(() => {
-    if (isAuditing) {
-      const interval = setInterval(() => {
-        setAuditProgress(prev => {
-          if (prev >= 100) {
-            clearInterval(interval);
-            setTimeout(() => {
-              setIsAuditing(false);
-              setShowAuditResults(true);
-            }, 500);
-            return 100;
-          }
-          return prev + 2;
-        });
-      }, 50);
-      return () => clearInterval(interval);
-    }
-  }, [isAuditing]);
-
-  return (
+export default function Home() {  return (
     <div className="flex flex-col gap-12 md:gap-20 pb-12 md:pb-20 pt-28 md:pt-32">
       {/* Hero Section */}
       <section className="relative min-h-[50vh] md:min-h-[60vh] flex items-center justify-center overflow-hidden">
@@ -92,17 +61,6 @@ export default function Home() {
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-background to-background opacity-50" />
           <ParticleBackground />
 
-          {/* Scanning Animation */}
-          <AnimatePresence>
-            {isAuditing && (
-              <motion.div
-                initial={{ top: '0%' }}
-                animate={{ top: '100%' }}
-                transition={{ duration: 2.5, ease: "linear" }}
-                className="absolute left-0 w-full h-[2px] bg-primary/50 shadow-[0_0_15px_rgba(var(--primary-rgb),0.5)] z-20 pointer-events-none"
-              />
-            )}
-          </AnimatePresence>
         </div>
 
         <div className="container max-w-7xl mx-auto px-4 z-10 relative">
@@ -131,6 +89,17 @@ export default function Home() {
                 </p>
               </div>
 
+              {/* Bug Bounty Achievement */}
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-3 gap-y-2 mt-2">
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/20 via-primary/10 to-secondary/20 border border-primary/40 text-primary font-bold text-sm shadow-[0_0_20px_rgba(var(--primary-rgb),0.15)]">
+                  <Trophy className="w-4 h-4" />
+                  $400 HackerOne Bug Bounty &mdash; Paid
+                </span>
+                <span className="text-xs font-mono text-text-muted">
+                  Report #3851049 &middot; Bounty Hunter badge &middot; Jul 2026
+                </span>
+              </div>
+
               <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
                 <Link href="/projects">
                   <Button size="lg" className="gap-2">
@@ -144,18 +113,6 @@ export default function Home() {
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                 </a>
-                <Button
-                  onClick={runAudit}
-                  variant="ghost"
-                  size="lg"
-                  className={clsx(
-                    "gap-2 border border-white/5 bg-white/5 hover:bg-white/10 transition-all group",
-                    isAuditing && "opacity-50 pointer-events-none"
-                  )}
-                >
-                  <TerminalIcon className={clsx("w-4 h-4", isAuditing ? "animate-pulse" : "group-hover:text-primary transition-colors")} />
-                  {isAuditing ? `Auditing System... ${auditProgress}%` : "Run Technical Audit"}
-                </Button>
               </div>
 
               {/* Security & Hacker Profiles - Logo Row */}
@@ -188,42 +145,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Audit Results Overlay */}
-              <AnimatePresence>
-                {showAuditResults && (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.95, y: 10 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
-                    exit={{ opacity: 0, scale: 0.95, y: 10 }}
-                    className="mt-8 p-4 rounded-xl bg-primary/5 border border-primary/20 backdrop-blur-md max-w-2xl mx-auto md:mx-0"
-                  >
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                      <div className="flex items-center gap-2">
-                        <ShieldCheck className="w-5 h-5 text-primary" />
-                        <span className="text-sm font-bold text-text-primary tracking-tight">Technical Audit Complete</span>
-                      </div>
-                      <div className="flex gap-4">
-                        {[
-                          { label: 'Latency', value: '18ms', color: 'text-primary' },
-                          { label: 'Security', value: 'Grade A', color: 'text-secondary' },
-                          { label: 'Accessibility', value: '100', color: 'text-blue-400' }
-                        ].map((stat, i) => (
-                          <div key={i} className="flex flex-col items-center">
-                            <span className="text-[10px] uppercase tracking-widest text-text-muted font-bold">{stat.label}</span>
-                            <span className={clsx("text-sm font-mono font-bold", stat.color)}>{stat.value}</span>
-                          </div>
-                        ))}
-                      </div>
-                      <button
-                        onClick={() => setShowAuditResults(false)}
-                        className="text-[10px] uppercase font-bold text-text-muted hover:text-text-primary transition-colors"
-                      >
-                        Dismiss
-                      </button>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
             </motion.div>
 
             {/* Glowing Cyberpunk Profile Image */}

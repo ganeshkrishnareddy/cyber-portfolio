@@ -149,7 +149,7 @@ export function SecurityResearchContent() {
                 </div>
             </motion.div>
 
-            {/* Verified Submissions */}
+            {/* Bug Bounty Programs */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -157,94 +157,38 @@ export function SecurityResearchContent() {
                 className="space-y-6"
             >
                 <div className="space-y-1">
-                    <h2 className="text-2xl font-bold text-text-primary">Verified Submissions</h2>
+                    <h2 className="text-2xl font-bold text-text-primary">Bug Bounty Programs</h2>
                     <p className="text-sm text-text-muted">
-                        Live report record across bug bounty platforms.
+                        Verified platforms &amp; programs I&rsquo;ve worked on.
                     </p>
                 </div>
 
-                <div className="rounded-xl border border-surface bg-surface/30 overflow-hidden">
-                    <div className="px-6 py-3 border-b border-surface flex items-center justify-between">
-                        <h3 className="font-bold text-text-primary">HackerOne &mdash; 8 reports</h3>
-                        <span className="text-xs font-mono text-primary border border-primary/30 bg-primary/5 px-2 py-0.5 rounded">1 bounty paid: $400</span>
+                <div className="grid sm:grid-cols-2 gap-4">
+                    <div className="rounded-xl border border-surface bg-surface/30 p-6">
+                        <div className="flex items-center justify-between mb-4">
+                            <h3 className="font-bold text-text-primary">HackerOne</h3>
+                            <span className="text-xs font-mono text-text-muted border border-surface px-2 py-0.5 rounded">8 reports</span>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                            {["Plaid", "CLEAR", "Stripchat", "1win"].map((company) => (
+                                <span key={company} className="text-xs font-mono font-bold uppercase tracking-widest text-text-muted bg-surface/50 border border-surface px-3 py-1.5 rounded">
+                                    {company}
+                                </span>
+                            ))}
+                        </div>
                     </div>
-                    <div className="overflow-x-auto">
-                        <table className="w-full text-sm">
-                            <thead>
-                                <tr className="text-left text-[10px] uppercase tracking-widest text-text-muted border-b border-surface">
-                                    <th className="px-6 py-2">Report</th>
-                                    <th className="px-4 py-2">Program</th>
-                                    <th className="px-4 py-2">Subject</th>
-                                    <th className="px-4 py-2">Severity</th>
-                                    <th className="px-6 py-2 text-right">Reward</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-surface/50">
-                                {[
-                                    ["#3900831", "Plaid", "Subdomain takeover on verify-testing.plaid.com", "Low"],
-                                    ["#3905298", "Plaid", "Server-side reCAPTCHA validation bypass on account signup", "Low"],
-                                    ["#3900681", "CLEAR", "OAuth/OIDC infra exposure + unauth admin API surface", "None"],
-                                    ["#3851077", "CLEAR", "Salesforce sandbox exposes OIDC discovery + token exchange", "High"],
-                                    ["#3851049", "CLEAR", "Unauthenticated data injection in FormAssembly form allows database poisoning", "Low"],
-                                    ["#3851068", "CLEAR", "postMessage wildcard origin + missing X-Frame-Options (clickjacking chain)", "Low"],
-                                    ["#39793920", "Stripchat", "CNAME chain exposes internal AWS VPC via public DNS", "Medium"],
-                                    ["#3792633", "1win", "Unauthenticated API endpoints exposing configuration data", "Low"],
-                                ].map(([rep, prog, subj, sev]) => (
-                                    <tr key={rep} className="hover:bg-surface/40 transition-colors">
-                                        <td className="px-6 py-2 font-mono text-primary whitespace-nowrap">{rep}</td>
-                                        <td className="px-4 py-2 font-medium text-text-primary whitespace-nowrap">{prog}</td>
-                                        <td className="px-4 py-2 text-text-muted max-w-md truncate">{subj}</td>
-                                        <td className="px-4 py-2 whitespace-nowrap">
-                                            {sev === 'High' ? (
-                                                <span className="text-xs font-bold px-2 py-0.5 rounded bg-red-500/10 text-red-400">High</span>
-                                            ) : (
-                                                <span className="text-text-muted">&mdash;</span>
-                                            )}
-                                        </td>
-                                        <td className="px-6 py-2 text-right whitespace-nowrap">{rep === '#3851049' ? <span className="text-primary font-bold">$400 PAID</span> : <span className="text-text-muted">&mdash;</span>}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div className="rounded-xl border border-surface bg-surface/30 overflow-hidden">
-                    <div className="px-6 py-3 border-b border-surface flex items-center justify-between">
-                        <h3 className="font-bold text-text-primary">Com Olho &mdash; 10 submissions</h3>
-                        <span className="text-xs font-mono text-text-muted border border-surface px-2 py-0.5 rounded">2 in review</span>
-                    </div>
-                    <div className="overflow-x-auto">
-                        <table className="w-full text-sm">
-                            <thead>
-                                <tr className="text-left text-[10px] uppercase tracking-widest text-text-muted border-b border-surface">
-                                    <th className="px-6 py-2">Program</th>
-                                    <th className="px-4 py-2">Subject</th>
-                                    <th className="px-6 py-2 text-right">Status</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-surface/50">
-                                {[
-                                    ["Sai Life Sciences", "Laravel debug mode on production eprocure.sailife.com", "In Review"],
-                                    ["Nykaa", "Unauthenticated admin UI + GraphQL introspection", "In Review"],
-                                    ["Cleartax", "Unverified arbitrary GSTIN attach (broken access control)", "Closed"],
-                                    ["SBI Card", "Spring Boot Actuator exposure leading to internal infrastructure", "Closed"],
-                                    ["Zerodha", "Loans API error leak (HTTP 500 + Python stack trace)", "Closed"],
-                                    ["Cleartax", "Firebase config + multiple critical/high findings exposure", "Closed"],
-                                    ["SBI Card", "Exposed Aadhaar eKYC API config with hardcoded secrets", "Closed"],
-                                    ["Quickwork", "API surface exposure & authentication gaps", "Closed"],
-                                    ["Com Olho", "Weak Content Security Policy (CSP) configuration", "Closed"],
-                                ].map(([prog, subj, status]) => (
-                                    <tr key={prog + subj} className="hover:bg-surface/40 transition-colors">
-                                        <td className="px-6 py-2 font-medium text-text-primary whitespace-nowrap">{prog}</td>
-                                        <td className="px-4 py-2 text-text-muted max-w-md truncate">{subj}</td>
-                                        <td className="px-6 py-2 text-right whitespace-nowrap">
-                                            <span className={`text-xs font-bold ${status === 'In Review' ? 'text-blue-400' : 'text-text-muted'}`}>{status}</span>
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                    <div className="rounded-xl border border-surface bg-surface/30 p-6">
+                        <div className="flex items-center justify-between mb-4">
+                            <h3 className="font-bold text-text-primary">Com Olho</h3>
+                            <span className="text-xs font-mono text-text-muted border border-surface px-2 py-0.5 rounded">10 submissions</span>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                            {["Sai Life Sciences", "Nykaa", "Cleartax", "SBI Card", "Zerodha", "Quickwork", "Com Olho"].map((company) => (
+                                <span key={company} className="text-xs font-mono font-bold uppercase tracking-widest text-text-muted bg-surface/50 border border-surface px-3 py-1.5 rounded">
+                                    {company}
+                                </span>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </motion.div>
