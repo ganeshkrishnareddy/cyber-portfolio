@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Network } from 'lucide-react';
 
 export const metadata = {
-    title: 'System Design Notes | P Ganesh Krishna Reddy',
+    title: 'System Design Notes',
     description: 'Raw documentation and design patterns for distributed systems.',
 };
 

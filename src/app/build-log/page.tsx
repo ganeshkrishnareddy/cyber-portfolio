@@ -1,7 +1,7 @@
 import { BuildLogContent } from '@/components/content/BuildLogContent';
 
 export const metadata = {
-    title: 'Build Log | P Ganesh Krishna Reddy',
+    title: 'Build Log',
     description: 'A raw timeline of production problem-solving, architectural decisions, and security patches.',
 };
 

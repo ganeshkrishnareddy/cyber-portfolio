@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArrowLeft, BookOpen } from 'lucide-react';
 
 export const metadata = {
-    title: 'Engineering Blog | P Ganesh Krishna Reddy',
+    title: 'Engineering Blog',
     description: 'Technical deep-dives into application security, system design, and engineering tradeoffs.',
 };
 

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { ContactContent } from '@/components/content/ContactContent';
 
 export const metadata: Metadata = {
-    title: "Contact | P Ganesh Krishna Reddy",
+    title: "Contact",
     description: "Get in touch for Secure Software Engineering, Backend Development, or Application Security opportunities.",
 };
 
