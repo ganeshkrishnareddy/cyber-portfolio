@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ParticleBackground } from '@/components/3d/ParticleBackground';
 import { ArrowRight, Shield, Terminal as TerminalIcon, ShieldCheck, Lock, Globe, Zap, Trophy } from 'lucide-react';
@@ -52,7 +52,14 @@ const HackerEarthIcon = () => (
     </svg>
 );
 
-export default function Home() {  return (
+export default function Home() {
+  const [calendarMounted, setCalendarMounted] = useState(false);
+
+  useEffect(() => {
+    setCalendarMounted(true);
+  }, []);
+
+  return (
     <div className="flex flex-col gap-12 md:gap-20 pb-12 md:pb-20 pt-28 md:pt-32">
       {/* Hero Section */}
       <section className="relative min-h-[50vh] md:min-h-[60vh] flex items-center justify-center overflow-hidden">
@@ -400,13 +407,15 @@ export default function Home() {  return (
             </div>
           </div>
           <div className="overflow-x-auto w-full flex justify-center opacity-80 hover:opacity-100 transition-opacity">
-            <GitHubCalendar 
-              username="ganeshkrishnareddy" 
-              colorScheme="dark" 
-              theme={{
-                dark: ['#1A1A1A', '#00441b', '#006d2c', '#238b45', '#FFFFFF']
-              }}
-            />
+            {calendarMounted && (
+              <GitHubCalendar 
+                username="ganeshkrishnareddy" 
+                colorScheme="dark" 
+                theme={{
+                  dark: ['#1A1A1A', '#00441b', '#006d2c', '#238b45', '#FFFFFF']
+                }}
+              />
+            )}
           </div>
         </div>
       </section>
