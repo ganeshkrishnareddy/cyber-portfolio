@@ -125,6 +125,7 @@ const results = {
   typography: { tiny: 0 },
   sitemap: { ok: false, urls: 0, detail: '' },
   robots: { ok: false, detail: '' },
+  hiddenContent: { total: 0, pages: [] },
 };
 
 async function auditPage(browser, base, path) {
@@ -164,6 +165,27 @@ async function auditPage(browser, base, path) {
   if (smallTargets) results.tapTargets.pages.push(`${path}:${smallTargets}`);
   results.typography.tiny += tinyText;
 
+  // Scroll-reveal check: pages below the fold (whileInView etc.) must actually
+  // become visible once scrolled into view - otherwise content is permanently hidden.
+  const hiddenAfterScroll = await page.evaluate(async () => {
+    const docH = document.documentElement.scrollHeight;
+    const vh = window.innerHeight;
+    for (let y = 0; y < docH; y += vh) {
+      window.scrollTo(0, y);
+      await new Promise((r) => setTimeout(r, 250));
+    }
+    await new Promise((r) => setTimeout(r, 600));
+    window.scrollTo(0, 0);
+    let n = 0;
+    document.querySelectorAll('*').forEach((el) => {
+      const s = getComputedStyle(el);
+      if ((s.opacity === '0' || s.visibility === 'hidden') && el.textContent.trim().length > 3) n++;
+    });
+    return n;
+  });
+  results.hiddenContent.total += hiddenAfterScroll;
+  if (hiddenAfterScroll) results.hiddenContent.pages.push(`${path}:${hiddenAfterScroll}`);
+
   // overflow across viewports
   for (const [name, w, h] of VIEWPORTS) {
     await page.setViewport({ width: w, height: h });
@@ -188,7 +210,8 @@ function score() {
   const vp = results.viewportMeta.pass === PAGES.length ? 20 : 0;
   const ov = results.overflow.failures === 0 ? 30 : Math.max(0, 30 - results.overflow.failures * 10);
   const tap = results.tapTargets.small === 0 ? 20 : Math.max(0, 20 - results.tapTargets.small * 2);
-  const err = results.pageErrors.errors === 0 ? 15 : Math.max(0, 15 - results.pageErrors.errors * 5);
+  const err =
+    results.pageErrors.errors === 0 ? 15 : Math.max(0, 15 - results.pageErrors.errors * 5 - results.hiddenContent.total * 3);
   const seo = (results.sitemap.ok ? 8 : 0) + (results.robots.ok ? 7 : 0);
   return { vp, ov, tap, err, seo, total: vp + ov + tap + err + seo };
 }
@@ -246,7 +269,7 @@ console.log(
   `│ Tap targets (>=24px)               │  ${String(s.tap).padStart(2)}/20  │ ${results.tapTargets.small} small target(s)${results.tapTargets.pages.length ? ' ' + results.tapTargets.pages.join(', ') : ''}`
 );
 console.log(
-  `│ Runtime health (no page errors)    │  ${String(s.err).padStart(2)}/15  │ ${results.pageErrors.errors} error(s)${results.pageErrors.pages.length ? ' ' + results.pageErrors.pages.join(', ') : ''}`
+  `│ Runtime health (no page errors)    │  ${String(s.err).padStart(2)}/15  │ ${results.pageErrors.errors} error(s)${results.pageErrors.pages.length ? ' ' + results.pageErrors.pages.join(', ') : ''}${results.hiddenContent.total ? ' · ' + results.hiddenContent.total + ' hidden text node(s) ' + results.hiddenContent.pages.join(', ') : ''}`
 );
 console.log(
   `│ Sitemap + robots                   │  ${String(s.seo).padStart(2)}/15  │ sitemap: ${results.sitemap.detail} · robots: ${results.robots.detail}`
