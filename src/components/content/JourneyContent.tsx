@@ -3,15 +3,10 @@
 import { motion } from 'framer-motion';
 import { Award, Target, Rocket } from 'lucide-react';
 import { SkillBadge } from '@/components/SkillBadge';
+import { CERTIFICATIONS } from '@/data/profile';
 
 export function JourneyContent() {
-    const certifications = [
-        { name: "QuickHeal Certified Malware Analyst", issuer: "QuickHeal", date: "Dec 2025" },
-        { name: "CompTIA CySA+", issuer: "CompTIA", date: "Aug 2025" },
-        { name: "CompTIA PenTest+", issuer: "CompTIA", date: "Aug 2025" },
-        { name: "CompTIA Security+", issuer: "CompTIA", date: "Jan 2025" },
-        { name: "CompTIA Network+", issuer: "CompTIA", date: "Aug 2024" },
-    ];
+    const certifications = CERTIFICATIONS;
 
     const securityDomains = ["Risk Assessment", "Application Security", "Linux Hardening", "Network Defense", "Threat Detection"];
     const engineeringGrowth = ["React/Next.js", "Node.js", "REST APIs", "Firebase", "PostgreSQL", "System Design"];
@@ -127,9 +122,10 @@ export function JourneyContent() {
                                 <div key={i} className="flex flex-col gap-2 p-4 rounded-lg bg-background/50 border border-surface-hover group hover:border-primary/50 transition-all">
                                     <div className="flex justify-between items-start">
                                         <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors">{cert.name}</h4>
-                                        <span className="text-[10px] font-mono text-text-muted opacity-60">{cert.date}</span>
+                                        <span className="text-[10px] font-mono text-text-muted opacity-60">{cert.issued}</span>
                                     </div>
                                     <div className="text-xs text-text-muted uppercase tracking-wider">{cert.issuer}</div>
+                                    <a href={cert.verifyUrl} target="_blank" rel="noopener" className="text-xs text-primary underline">Verify</a>
                                 </div>
                             ))}
                         </div>

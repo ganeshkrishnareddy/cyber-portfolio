@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     default: `${SITE_NAME} | Cybersecurity & Bug Bounty Researcher`,
     template: `%s | ${SITE_NAME}`,
   },
-  description: "Security researcher, SOC/VAPT analyst and full-stack engineer. $400 USD HackerOne bug bounty; CompTIA Security+, CySA+, PenTest+, Network+ certified.",
+  description: "Security researcher, SOC/VAPT analyst and full-stack engineer. $400 USD HackerOne bug bounty; 18 LinkedIn-verified certifications.",
   keywords: ["Cybersecurity", "Bug Bounty", "HackerOne", "SOC Analyst", "Penetration Testing", "VAPT", "Application Security", "Network Security", "Linux Hardening"],
   authors: [{ name: SITE_NAME, url: "https://github.com/ganeshkrishnareddy" }],
   openGraph: {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: SITE_NAME,
     title: `${SITE_NAME} | Cybersecurity & Bug Bounty Researcher`,
-    description: "Security researcher, SOC/VAPT analyst and full-stack engineer. $400 USD HackerOne bug bounty; seven certifications.",
+    description: "Security researcher, SOC/VAPT analyst and full-stack engineer. $400 USD HackerOne bug bounty; 18 LinkedIn-verified certifications.",
     images: [{ url: SITE_IMAGE, width: 512, height: 512, alt: SITE_NAME }],
   },
   twitter: {

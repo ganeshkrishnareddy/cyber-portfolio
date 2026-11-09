@@ -86,15 +86,15 @@ export default function Home() {
               </div>
 
               <h1 className="text-3xl sm:text-4xl md:text-7xl font-extrabold tracking-tight leading-tight text-text-primary">
-                Secure Software Engineer.<br />
+                I break systems.<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-                  I build software that survives production.
+                  I build better ones.
                 </span>
               </h1>
               
               <div className="flex flex-col gap-2 mt-6">
-                <p className="text-xl text-text-muted max-w-2xl mx-auto md:mx-0 leading-relaxed font-mono">
-                  Full-stack engineering. Application Security. AI Systems.
+                <p className="text-xl text-text-muted max-w-2xl mx-auto md:mx-0 leading-relaxed">
+                  I&apos;m Ganesh Krishna Reddy &mdash; a cybersecurity researcher and secure software engineer who investigates vulnerabilities, engineers resilient applications and builds products designed for the real world.
                 </p>
               </div>
 
@@ -105,7 +105,7 @@ export default function Home() {
                   $400 HackerOne Bug Bounty &mdash; Paid
                 </span>
                 <span className="text-xs font-mono text-text-muted">
-                  Report #3851049 &middot; Bounty Hunter badge &middot; Jul 2026
+                  Verified on the public HackerOne profile
                 </span>
               </div>
 
@@ -242,16 +242,14 @@ export default function Home() {
                     First Paid Bug Bounty &mdash; <span className="text-primary">$400 USD on HackerOne</span>
                   </h2>
                   <p className="text-text-muted leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                    Awarded Jul 29, 2026 on the CLEAR program and paid via PayPal Jul 30, 2026 &mdash; earning the
-                    HackerOne <span className="text-primary font-semibold">Bounty Hunter</span> badge. Every finding
-                    disclosed responsibly through the vendor&rsquo;s coordinated channel.
+                    A $400 USD paid bug bounty on HackerOne, verified on the public HackerOne profile.
+                    Every finding is disclosed responsibly.
                   </p>
                 </div>
                 <div className="flex flex-wrap justify-center lg:justify-start gap-2">
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-text-muted bg-surface/50 border border-surface px-2 py-1 rounded">Report #3851049</span>
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-text-muted bg-surface/50 border border-surface px-2 py-1 rounded">CLEAR Program</span>
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-text-muted bg-surface/50 border border-surface px-2 py-1 rounded">Bounty Hunter Badge</span>
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-text-muted bg-surface/50 border border-surface px-2 py-1 rounded">PayPal Payout</span>
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-text-muted bg-surface/50 border border-surface px-2 py-1 rounded">Paid Bounty</span>
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-text-muted bg-surface/50 border border-surface px-2 py-1 rounded">Responsible Disclosure</span>
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-text-muted bg-surface/50 border border-surface px-2 py-1 rounded">Verified Profile</span>
                 </div>
                 <div className="flex flex-wrap justify-center lg:justify-start gap-3 pt-2">
                   <Link href="/security-research">

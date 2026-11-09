@@ -126,25 +126,24 @@ export function SecurityResearchContent() {
                     <div className="text-3xl font-extrabold text-primary font-mono">$400</div>
                     <div className="text-sm font-bold text-text-primary">USD HackerOne Bug Bounty &mdash; Paid</div>
                     <p className="text-xs text-text-muted leading-relaxed">
-                        Awarded Jul 29, 2026 (Report #3851049, CLEAR program); payout confirmed via PayPal Jul 30, 2026.
-                        Earning the <span className="text-primary">Bounty Hunter</span> badge &mdash; my first paid bounty.
+                        A $400 USD paid bug bounty on HackerOne, verified on the public profile.
                         Verify on <a className="inline-block py-1 text-primary underline" href="https://hackerone.com/pganeshkrishnareddy" target="_blank" rel="noopener">hackerone.com/pganeshkrishnareddy</a>.
                     </p>
                 </div>
                 <div className="rounded-xl border border-surface bg-surface/30 p-6 space-y-2">
-                    <div className="text-3xl font-extrabold text-text-primary font-mono">P1</div>
-                    <div className="text-sm font-bold text-text-primary">Critical Severity &mdash; In Pursuit</div>
+                    <div className="text-3xl font-extrabold text-text-primary font-mono">#6</div>
+                    <div className="text-sm font-bold text-text-primary">PlayCTF &mdash; Global Rank</div>
                     <p className="text-xs text-text-muted leading-relaxed">
-                        $400 paid bounty secured; high-severity OIDC exposure disclosed on HackerOne (CLEAR). Next
-                        milestone: a validated P1 (critical) finding.
+                        Elite Stage on PlayCTF: all 45 challenges solved in one day &mdash; Global #6, India #5,
+                        with 2 badges. Verify on <a className="inline-block py-1 text-primary underline" href="https://playctf.in/profile/pganeshkrishnareddy" target="_blank" rel="noopener">playctf.in/profile/pganeshkrishnareddy</a>.
                     </p>
                 </div>
                 <div className="rounded-xl border border-surface bg-surface/30 p-6 space-y-2">
-                    <div className="text-3xl font-extrabold text-text-primary font-mono">18+</div>
-                    <div className="text-sm font-bold text-text-primary">Reports Submitted</div>
+                    <div className="text-3xl font-extrabold text-text-primary font-mono">18</div>
+                    <div className="text-sm font-bold text-text-primary">LinkedIn-Verified Certifications</div>
                     <p className="text-xs text-text-muted leading-relaxed">
-                        8 on HackerOne (Plaid, CLEAR, Stripchat, 1win) and 10 on Com Olho &mdash; plus 7 professional certifications
-                        (CompTIA Security+, CySA+, PenTest+, Network+, QuickHeal &times;2, CS50).
+                        18 certifications on LinkedIn, each with a verification link &mdash; CompTIA, Anthropic,
+                        SkillFront, Forage, Coursera, Quick Heal, Harvard CS50 and AWS Academy.
                     </p>
                 </div>
             </motion.div>

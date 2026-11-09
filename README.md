@@ -54,6 +54,10 @@ npm install -g netlify-cli
 netlify deploy --prod
 ```
 
+## 📄 Latest single-file portfolio
+
+`public/portfolio.html` is the latest redesigned single-file portfolio (light editorial theme, multi-page hash routing, official profile/skill/certification logos, 18 LinkedIn-verified certifications, no CGPA). It is served at `/portfolio.html` on the deployed site.
+
 ## 🌐 Live Deployment
 The production version is live at: [pganeshkrishnareddy.vercel.app](https://pganeshkrishnareddy.vercel.app/)
 

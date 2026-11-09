@@ -46,6 +46,7 @@ export function Footer() {
                             <li><Link href="https://hackerone.com/pganeshkrishnareddy" target="_blank" className="inline-block py-2 hover:text-[#ff6600] transition-colors">HackerOne</Link></li>
                             <li><Link href="https://yeswehack.com/hunters/pganeshkrishnareddy" target="_blank" className="inline-block py-2 hover:text-[#e91e63] transition-colors">YesWeHack</Link></li>
                             <li><Link href="/about" className="inline-block py-2 hover:text-primary transition-colors">Philosophy</Link></li>
+                            <li><a href="/portfolio.html" className="inline-block py-2 hover:text-primary transition-colors">Latest Portfolio (single-file)</a></li>
                         </ul>
                     </div>
 

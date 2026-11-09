@@ -152,11 +152,11 @@ Java.perform(function () {
         title: "From P4 to P1: How I Earned My First Paid HackerOne Bounty",
         date: "2026-08-10",
         readTime: "9 min read",
-        summary: "My first $400 USD bug bounty on HackerOne (Report #3851049, CLEAR program, paid Jul 30 2026): the recon workflow, the severity ladder from P4 to P1, responsible disclosure, and the lessons that turned bounty hunting into a repeatable process.",
+        summary: "My first $400 USD paid bug bounty on HackerOne: the recon workflow, responsible disclosure, and the lessons that turned bounty hunting into a repeatable process.",
         tags: ["Bug Bounty", "HackerOne", "Vulnerability Research", "Web Security"],
         content: `
             <h2>Validated, Not Just Lab Practice</h2>
-            <p>Most aspiring security professionals train in labs. Labs are safe, deterministic, and quiet. Real programs are messy: hidden endpoints, legacy code paths, rate limits, and vendors who triage slowly. This is the story of my first <strong>$400 USD paid bounty on HackerOne</strong> - <strong>Report #3851049, awarded Jul 29, 2026 on the CLEAR program and paid via PayPal on Jul 30, 2026</strong>, earning the <strong>Bounty Hunter</strong> badge. It is verifiable on <a href="https://hackerone.com/pganeshkrishnareddy" target="_blank" rel="noopener">my public HackerOne profile</a>.</p>
+            <p>Most aspiring security professionals train in labs. Labs are safe, deterministic, and quiet. Real programs are messy: hidden endpoints, legacy code paths, rate limits, and vendors who triage slowly. This is the story of my first <strong>$400 USD paid bounty on HackerOne</strong>. It is verifiable on <a href="https://hackerone.com/pganeshkrishnareddy" target="_blank" rel="noopener">my public HackerOne profile</a>.</p>
 
             <h2>The Severity Ladder: P4 to P1</h2>
             <p>On HackerOne's severity model, findings are triaged from <strong>P4 (informational/low)</strong> up to <strong>P1 (critical)</strong>. My early submissions were honest but small - P4s and P3s that showed I understood the surface area but hadn't yet found the deep bugs. The breakthrough came from treating every low-severity finding as reconnaissance for the next one:</p>

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Briefcase, GraduationCap, Award, Shield, Terminal as TerminalIcon } from 'lucide-react';
 import { SkillBadge } from '@/components/SkillBadge';
+import { CERTIFICATIONS, EDUCATION, EXPERIENCE } from '@/data/profile';
 
 export function AboutContent() {
         const skills = {
@@ -107,32 +108,19 @@ export function AboutContent() {
                 </div>
 
                 <div className="relative border-l-2 border-surface ml-3 pl-8 space-y-10">
-                    <div className="relative">
-                        <div className="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-background bg-primary" />
-                        <div className="space-y-2">
-                            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                                <h3 className="text-xl font-bold text-text-primary">Technical Lead (Cyber Security)</h3>
-                                <span className="text-sm font-mono text-text-muted">Apr 2026 - Present</span>
-                            </div>
-                            <div className="text-secondary font-medium">Zentoja Technologies Private Limited <span className="text-text-muted font-normal">• Remote</span></div>
-                            <ul className="list-disc list-inside text-text-muted space-y-2 pt-2">
-                                <li>Built secure authentication workflows and zero-trust policies for distributed infrastructure.</li>
-                                <li>Remediated 50+ critical vulnerabilities before production deployment.</li>
-                                <li>Reduced attack surface by enforcing strict RBAC and eliminating exposed legacy endpoints.</li>
-                                <li>Automated vulnerability validation directly into the deployment pipeline.</li>
-                                <li>Introduced secure deployment practices, saving significant engineering hours on reactive fixes.</li>
-                            </ul>
-                            <div className="flex flex-wrap gap-2 pt-2">
-                                <SkillBadge name="Kali Linux" level="Applied" className="border-surface" />
-                                <SkillBadge name="Burp Suite" level="Applied" className="border-surface" />
-                                <SkillBadge name="Wireshark" level="Applied" className="border-surface" />
-                                <SkillBadge name="Metasploit" level="Applied" className="border-surface" />
-                                <SkillBadge name="Wazuh" level="Applied" className="border-surface" />
-                                <SkillBadge name="Linux" level="Applied" className="border-surface" />
-                                <SkillBadge name="Cloud Security" level="Applied" className="border-surface" />
+                    {EXPERIENCE.map((job) => (
+                        <div key={job.org + job.role} className="relative">
+                            <div className="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-background bg-primary" />
+                            <div className="space-y-2">
+                                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                                    <h3 className="text-xl font-bold text-text-primary">{job.role}</h3>
+                                    <span className="text-sm font-mono text-text-muted">{job.period}</span>
+                                </div>
+                                <div className="text-secondary font-medium">{job.org}{job.type ? <span className="text-text-muted font-normal"> &bull; {job.type}</span> : null}</div>
+                                <p className="text-text-muted">{job.description}</p>
                             </div>
                         </div>
-                    </div>
+                    ))}
                 </div>
             </section>
 
@@ -165,25 +153,15 @@ export function AboutContent() {
                         <h2 className="text-2xl font-bold text-text-primary">Education</h2>
                     </div>
                     <div className="space-y-4">
-                        <div>
-                            <h3 className="text-lg font-bold text-text-primary">B.Tech in Computer Science and Engineering</h3>
-                            <div className="text-text-muted">(Cyber Security)</div>
-                            <div className="text-secondary">Lovely Professional University</div>
-                            <div className="text-sm text-text-muted font-mono mt-1">2022 - 2026</div>
-                            <div className="text-sm text-text-muted mt-2">CGPA: 7.51</div>
-                        </div>
-                        <div>
-                            <h3 className="text-lg font-bold text-text-primary">Intermediate (MPC)</h3>
-                            <div className="text-secondary">Narayana Junior College</div>
-                            <div className="text-sm text-text-muted font-mono mt-1">2020 - 2022</div>
-                            <div className="text-sm text-text-muted mt-2">Percentage: 79.4%</div>
-                        </div>
-                        <div>
-                            <h3 className="text-lg font-bold text-text-primary">Secondary Education</h3>
-                            <div className="text-secondary">Narayana E.M High School</div>
-                            <div className="text-sm text-text-muted font-mono mt-1">2019 - 2020</div>
-                            <div className="text-sm text-text-muted mt-2">Percentage: 98%</div>
-                        </div>
+                        {EDUCATION.map((edu) => (
+                            <div key={edu.school}>
+                                <h3 className="text-lg font-bold text-text-primary">{edu.degree}</h3>
+                                {edu.field ? <div className="text-text-muted">({edu.field})</div> : null}
+                                <div className="text-secondary">{edu.school}</div>
+                                <div className="text-sm text-text-muted font-mono mt-1">{edu.period}{edu.grade ? " \u00b7 Grade: " + edu.grade : ""}</div>
+                                {edu.note ? <div className="text-sm text-text-muted mt-2">{edu.note}</div> : null}
+                            </div>
+                        ))}
                     </div>
                 </section>
 
@@ -193,34 +171,17 @@ export function AboutContent() {
                         <h2 className="text-2xl font-bold text-text-primary">Certifications</h2>
                     </div>
                     <ul className="space-y-4">
-                        <li className="flex items-start justify-between group">
-                            <div>
-                                <h3 className="font-bold text-text-primary group-hover:text-primary transition-colors">QuickHeal Certified Malware Analyst</h3>
-                                <div className="text-sm text-text-muted">QuickHeal</div>
-                            </div>
-                            <span className="text-xs font-mono text-text-muted border border-surface px-2 py-1 rounded">Dec 2025</span>
-                        </li>
-                        <li className="flex items-start justify-between group">
-                            <div>
-                                <h3 className="font-bold text-text-primary group-hover:text-primary transition-colors">CompTIA Network+, Security+, CySA+, PenTest+</h3>
-                                <div className="text-sm text-text-muted">CompTIA</div>
-                            </div>
-                            <span className="text-xs font-mono text-text-muted border border-surface px-2 py-1 rounded">Aug 2025</span>
-                        </li>
-                        <li className="flex items-start justify-between group">
-                            <div>
-                                <h3 className="font-bold text-text-primary group-hover:text-primary transition-colors">QuickHeal Certified Digital Forensic Investigator</h3>
-                                <div className="text-sm text-text-muted">QuickHeal</div>
-                            </div>
-                            <span className="text-xs font-mono text-text-muted border border-surface px-2 py-1 rounded">Jan 2025</span>
-                        </li>
-                        <li className="flex items-start justify-between group">
-                            <div>
-                                <h3 className="font-bold text-text-primary group-hover:text-primary transition-colors">CS50: Introduction to Computer Science</h3>
-                                <div className="text-sm text-text-muted">Harvard University</div>
-                            </div>
-                            <span className="text-xs font-mono text-text-muted border border-surface px-2 py-1 rounded">2024</span>
-                        </li>
+                        {CERTIFICATIONS.map((cert) => (
+                            <li key={cert.name} className="flex items-start justify-between group gap-3">
+                                <div>
+                                    <h3 className="font-bold text-text-primary group-hover:text-primary transition-colors">{cert.name}</h3>
+                                    <div className="text-sm text-text-muted">{cert.issuer}</div>
+                                    {cert.credentialId ? <div className="text-xs font-mono text-text-muted">ID {cert.credentialId}</div> : null}
+                                    <a href={cert.verifyUrl} target="_blank" rel="noopener" className="text-sm text-primary underline">Verify</a>
+                                </div>
+                                <span className="text-xs font-mono text-text-muted border border-surface px-2 py-1 rounded whitespace-nowrap">{cert.issued}{cert.expires ? " - " + cert.expires : ""}</span>
+                            </li>
+                        ))}
                     </ul>
                 </section>
             </div>
@@ -241,9 +202,8 @@ export function AboutContent() {
                     <div className="bg-surface/30 p-6 rounded-lg border border-primary/30 hover:border-primary/60 transition-colors space-y-2">
                         <div className="text-lg font-bold text-primary">$400 USD HackerOne Bug Bounty &mdash; Paid</div>
                         <p className="text-text-muted text-sm leading-relaxed">
-                            Awarded <b>$400 USD</b> (Report #3851049, CLEAR program, Jul 2026) with a <b>confirmed PayPal
-                            payout</b> and the HackerOne <b>Bounty Hunter</b> badge. Active bug bounty hunter with findings
-                            spanning <b>P4 &rarr; P2</b> severity classes &mdash; currently pursuing <b>P1 (critical)</b>.
+                            Awarded a <b>$400 USD</b> paid bug bounty on HackerOne, verified on the public
+                            HackerOne profile. Every finding is disclosed responsibly.
                         </p>
                     </div>
                     <div className="bg-surface/30 p-6 rounded-lg border border-surface hover:border-surface-hover transition-colors space-y-2">
