@@ -1,3 +1,12 @@
 {
-  "$schema": "https://openapi.vercel.sh/v1.json"
+  "$schema": "https://openapi.vercel.sh/v1.json",
+  "builds": [
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "P_Ganesh_Bug_Bounty_Verification.pdf", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/index.html", "dest": "/index.html" },
+    { "src": "/P_Ganesh_Bug_Bounty_Verification.pdf", "dest": "/P_Ganesh_Bug_Bounty_Verification.pdf" }
+  ]
 }
